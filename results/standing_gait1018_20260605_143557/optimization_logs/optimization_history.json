@@ -1,0 +1,11 @@
+[
+    {
+        "generation": 1,
+        "min_cost": 0.0,
+        "mean_cost": 0.0,
+        "best_cost": 0.0,
+        "details": {
+            "simulation_time": 0.0
+        }
+    }
+]

@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 実行結果
+results/
+test_results/
+
+# 動画・ログ
+*.mp4
+*.avi
+*.sto
+*.log
+MUJOCO_LOG.TXT
+
+# テスト用スクリプト
+test.pool.py
+test_control.py
+test_log_output.py
+test_optimizer.py
+test_plot_output.py
+test_simulation.py
+test_video_render.py
+
+# 開発環境
+.vscode/
+.idea/
