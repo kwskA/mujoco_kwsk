@@ -7,6 +7,28 @@ import mujoco
 
 from mujoco import MjData, mj_step, mj_forward
 
+CAMERA_PRESETS = {
+    "front": {
+        "azimuth": 90.0,
+        "elevation": -10.0,
+        "distance": 3.0,
+    },
+    "side": {
+        "azimuth": 0.0,
+        "elevation": -10.0,
+        "distance": 3.0,
+    },
+    "diagonal": {
+        "azimuth": 45.0,
+        "elevation": -15.0,
+        "distance": 3.0,
+    },
+    "oblique": {
+        "azimuth": 135.0,
+        "elevation": -20.0,
+        "distance": 3.2,
+    },
+}
 
 class VideoRenderer:
     """

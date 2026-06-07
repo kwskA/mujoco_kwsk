@@ -1,0 +1,182 @@
+[
+    {
+        "generation": 1,
+        "min_cost": 17.740000000000002,
+        "mean_cost": 18.440800000000003,
+        "best_cost": 17.740000000000002,
+        "details": {
+            "simulation_time": 17.740000000000002
+        }
+    },
+    {
+        "generation": 2,
+        "min_cost": 17.04,
+        "mean_cost": 18.4352,
+        "best_cost": 17.04,
+        "details": {
+            "simulation_time": 17.04
+        }
+    },
+    {
+        "generation": 3,
+        "min_cost": 16.88,
+        "mean_cost": 18.0104,
+        "best_cost": 16.88,
+        "details": {
+            "simulation_time": 16.88
+        }
+    },
+    {
+        "generation": 4,
+        "min_cost": 16.299999999999997,
+        "mean_cost": 18.064,
+        "best_cost": 16.299999999999997,
+        "details": {
+            "simulation_time": 16.299999999999997
+        }
+    },
+    {
+        "generation": 5,
+        "min_cost": 16.400000000000002,
+        "mean_cost": 17.653599999999997,
+        "best_cost": 16.299999999999997,
+        "details": {
+            "simulation_time": 16.299999999999997
+        }
+    },
+    {
+        "generation": 6,
+        "min_cost": 16.38,
+        "mean_cost": 17.7232,
+        "best_cost": 16.299999999999997,
+        "details": {
+            "simulation_time": 16.299999999999997
+        }
+    },
+    {
+        "generation": 7,
+        "min_cost": 16.099999999999998,
+        "mean_cost": 17.500799999999998,
+        "best_cost": 16.099999999999998,
+        "details": {
+            "simulation_time": 16.099999999999998
+        }
+    },
+    {
+        "generation": 8,
+        "min_cost": 16.080000000000002,
+        "mean_cost": 17.325599999999998,
+        "best_cost": 16.080000000000002,
+        "details": {
+            "simulation_time": 16.080000000000002
+        }
+    },
+    {
+        "generation": 9,
+        "min_cost": 15.96,
+        "mean_cost": 16.8712,
+        "best_cost": 15.96,
+        "details": {
+            "simulation_time": 15.96
+        }
+    },
+    {
+        "generation": 10,
+        "min_cost": 15.22,
+        "mean_cost": 16.760800000000003,
+        "best_cost": 15.22,
+        "details": {
+            "simulation_time": 15.22
+        }
+    },
+    {
+        "generation": 11,
+        "min_cost": 15.74,
+        "mean_cost": 16.82,
+        "best_cost": 15.22,
+        "details": {
+            "simulation_time": 15.22
+        }
+    },
+    {
+        "generation": 12,
+        "min_cost": 14.04,
+        "mean_cost": 16.4568,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 13,
+        "min_cost": 15.620000000000001,
+        "mean_cost": 16.512,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 14,
+        "min_cost": 15.72,
+        "mean_cost": 16.5576,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 15,
+        "min_cost": 15.66,
+        "mean_cost": 16.691200000000002,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 16,
+        "min_cost": 15.700000000000001,
+        "mean_cost": 16.7824,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 17,
+        "min_cost": 15.68,
+        "mean_cost": 16.191200000000002,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 18,
+        "min_cost": 15.72,
+        "mean_cost": 16.2592,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 19,
+        "min_cost": 15.700000000000001,
+        "mean_cost": 16.456,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 20,
+        "min_cost": 15.74,
+        "mean_cost": 16.3168,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    }
+]

@@ -24,6 +24,10 @@ ROOT_DIR = Path(__file__).parent
 MODEL_INFO = create_model_info()
 MUSCLES = MODEL_INFO.muscle_names
 
+# True  : 左右対称パラメータで最適化
+# False : 全筋を個別パラメータで最適化
+USE_SYMMETRIC_PARAMS = False
+
 
 def build_controller(model):
     """
@@ -35,6 +39,8 @@ def build_controller(model):
         control_method=PDController(
             model=model,
             muscles=MUSCLES,
+            use_symmetric_params=USE_SYMMETRIC_PARAMS,
+            symmetric_muscle_pairs=MODEL_INFO.symmetric_muscle_pairs,
         ),
     )
 
@@ -67,9 +73,7 @@ def build_fall_detector(model):
 
     mj_forward(model, data)
 
-    com_init_height = float(
-        data.subtree_com[0][2]
-    )
+    com_init_height = float(data.subtree_com[0][2])
 
     return COMHeightFallDetector(
         com_init_height=com_init_height,
@@ -83,16 +87,22 @@ def main():
 
     sigma0 = 0.5
     popsize = 25
-    maxiter = 200
+    maxiter = 1000
 
     n_jobs = 6
     reserve_cores = 1
 
-    checkpoint_interval = 100
+    checkpoint_interval = 500
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    result_dir = ROOT_DIR / "results" / f"standing_{MODEL_INFO.name}_{timestamp}"
+    symmetry_tag = "symmetric" if USE_SYMMETRIC_PARAMS else "individual"
+
+    result_dir = (
+        ROOT_DIR
+        / "results"
+        / f"standing_{MODEL_INFO.name}_{timestamp}_{symmetry_tag}"
+    )
 
     model = MjModel.from_xml_path(MODEL_INFO.model_path)
     data = MjData(model)
@@ -115,6 +125,21 @@ def main():
         for t_id in tendon_ids
     ])
 
+    controller = build_controller(model)
+
+    x0 = controller.make_initial_params(
+        init_Kp=10.0,
+        init_Kd=2.0,
+        init_target_length=init_len,
+    )
+
+    print("[main_standing]")
+    print("model =", MODEL_INFO.name)
+    print("num_muscles =", len(MUSCLES))
+    print("use_symmetric_params =", USE_SYMMETRIC_PARAMS)
+    print("param_dim =", x0.size)
+    print("expected_param_dim =", controller.get_expected_param_dim())
+
     initial_state_dir = result_dir / "initial_state"
 
     InitialStateWriter(
@@ -126,18 +151,13 @@ def main():
         extra_info={
             "sim_steps": sim_steps,
             "controller": "StandingController + PDController",
+            "use_symmetric_params": USE_SYMMETRIC_PARAMS,
+            "num_muscles": len(MUSCLES),
+            "param_dim": int(x0.size),
             "init_Kp": 10.0,
             "init_Kd": 2.0,
         },
     ).write_all()
-
-    controller = build_controller(model)
-
-    x0 = controller.make_initial_params(
-        init_Kp=10.0,
-        init_Kd=2.0,
-        init_target_length=init_len,
-    )
 
     optimizer = create_optimizer(
         optimizer_type="cmaes",

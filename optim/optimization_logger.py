@@ -122,21 +122,21 @@ class OptimizationLogger:
             for record in self.records
         ]
 
-        mean_costs = [
-            record["mean_cost"]
-            for record in self.records
-        ]
+        # mean_costs = [
+        #     record["mean_cost"]
+        #     for record in self.records
+        # ]
 
-        best_costs = [
-            record["best_cost"]
-            for record in self.records
-        ]
+        # best_costs = [
+        #     record["best_cost"]
+        #     for record in self.records
+        # ]
 
         plt.figure(figsize=(10, 5))
 
         plt.plot(generations, min_costs, label="generation_min")
-        plt.plot(generations, mean_costs, label="generation_mean")
-        plt.plot(generations, best_costs, label="global_best")
+        # plt.plot(generations, mean_costs, label="generation_mean")
+        # plt.plot(generations, best_costs, label="global_best")
 
         plt.xlabel("Generation")
         plt.ylabel("Cost")
@@ -156,7 +156,7 @@ class OptimizationLogger:
         """
 
         self.save_csv()
-        self.save_json()
+        # self.save_json()
         self.plot_cost_history()
 
     def _collect_detail_keys(self):

@@ -1,0 +1,17 @@
+{
+    "model": "gait1018",
+    "model_path": "model/1018model.xml",
+    "sim_steps": 1000,
+    "debug_Kp": 10.0,
+    "debug_Kd": 2.0,
+    "target_scale": 1.0,
+    "use_symmetric_params": false,
+    "param_dim": 54,
+    "num_muscles": 18,
+    "fallen": true,
+    "survived_steps": 122,
+    "total_cost": 17.54,
+    "details": {
+        "simulation_time": 17.54
+    }
+}

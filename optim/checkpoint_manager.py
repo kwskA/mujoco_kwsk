@@ -1,7 +1,6 @@
 # optim/checkpoint_manager.py
 
 import os
-import csv
 import json
 import numpy as np
 from mujoco import MjModel, MjData, mj_forward
@@ -98,11 +97,11 @@ class CheckpointManager:
 
         qpos_names = self._get_qpos_names(model)
 
-        self._save_initial_qpos(
-            checkpoint_dir=checkpoint_dir,
-            qpos_names=qpos_names,
-            initial_qpos=initial_qpos_for_simulation,
-        )
+        # self._save_initial_qpos(
+        #     checkpoint_dir=checkpoint_dir,
+        #     qpos_names=qpos_names,
+        #     initial_qpos=initial_qpos_for_simulation,
+        # )
 
         controller = self.controller_builder(model)
         controller.set_params_from_vector(best_params)
@@ -164,22 +163,53 @@ class CheckpointManager:
             video_dir = os.path.join(checkpoint_dir, "videos")
             os.makedirs(video_dir, exist_ok=True)
 
-            video_path = os.path.join(video_dir, f"{tag}.mp4")
+            camera_settings = {
+                "front": {
+                    "azimuth": 90.0,
+                    "elevation": -10.0,
+                    "distance": 3.0,
+                },
+                "side": {
+                    "azimuth": 0.0,
+                    "elevation": -10.0,
+                    "distance": 3.0,
+                },
+                "diagonal": {
+                    "azimuth": 45.0,
+                    "elevation": -15.0,
+                    "distance": 3.0,
+                },
+                "oblique": {
+                    "azimuth": 135.0,
+                    "elevation": -20.0,
+                    "distance": 3.2,
+                },
+            }
 
-            video_renderer = VideoRenderer(
-                model=model,
-                controller=controller,
-                sim_steps=self.sim_steps,
-                initial_qpos=initial_qpos_for_simulation,
-                tracking_body_name="pelvis",
-            )
+            for camera_name, camera_param in camera_settings.items():
 
-            video_renderer.render(
-                save_path=video_path,
-                tendon_ids=tendon_ids,
-                actuator_ids=actuator_ids,
-                color_tendons=True,
-            )
+                video_path = os.path.join(
+                    video_dir,
+                    f"{tag}_{camera_name}.mp4",
+                )
+
+                video_renderer = VideoRenderer(
+                    model=model,
+                    controller=controller,
+                    sim_steps=self.sim_steps,
+                    initial_qpos=initial_qpos_for_simulation,
+                    tracking_body_name="pelvis",
+                    camera_distance=camera_param["distance"],
+                    camera_azimuth=camera_param["azimuth"],
+                    camera_elevation=camera_param["elevation"],
+                )
+
+                video_renderer.render(
+                    save_path=video_path,
+                    tendon_ids=tendon_ids,
+                    actuator_ids=actuator_ids,
+                    color_tendons=True,
+                )
 
         print(f"[CheckpointManager] saved {checkpoint_dir}")
 
@@ -228,35 +258,35 @@ class CheckpointManager:
         # slide / hinge joint
         return 1
 
-    def _save_initial_qpos(
-        self,
-        checkpoint_dir,
-        qpos_names,
-        initial_qpos,
-    ):
-        """
-        checkpointで使用した初期姿勢qposをCSVとして保存する。
-        """
+    # def _save_initial_qpos(
+    #     self,
+    #     checkpoint_dir,
+    #     qpos_names,
+    #     initial_qpos,
+    # ):
+    #     """
+    #     checkpointで使用した初期姿勢qposをCSVとして保存する。
+    #     """
 
-        path = os.path.join(
-            checkpoint_dir,
-            "initial_qpos.csv",
-        )
+    #     path = os.path.join(
+    #         checkpoint_dir,
+    #         "initial_qpos.csv",
+    #     )
 
-        with open(path, "w", newline="", encoding="utf-8") as f:
-            writer = csv.writer(f)
+    #     with open(path, "w", newline="", encoding="utf-8") as f:
+    #         writer = csv.writer(f)
 
-            writer.writerow([
-                "index",
-                "name",
-                "value",
-            ])
+    #         writer.writerow([
+    #             "index",
+    #             "name",
+    #             "value",
+    #         ])
 
-            for i, value in enumerate(initial_qpos):
-                writer.writerow([
-                    i,
-                    qpos_names[i],
-                    float(value),
-                ])
+    #         for i, value in enumerate(initial_qpos):
+    #             writer.writerow([
+    #                 i,
+    #                 qpos_names[i],
+    #                 float(value),
+    #             ])
 
-        print(f"[CheckpointManager] wrote {path}")
+    #     print(f"[CheckpointManager] wrote {path}")

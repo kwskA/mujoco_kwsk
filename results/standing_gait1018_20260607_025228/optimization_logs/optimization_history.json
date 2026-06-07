@@ -1,0 +1,4502 @@
+[
+    {
+        "generation": 1,
+        "min_cost": 17.740000000000002,
+        "mean_cost": 18.440800000000003,
+        "best_cost": 17.740000000000002,
+        "details": {
+            "simulation_time": 17.740000000000002
+        }
+    },
+    {
+        "generation": 2,
+        "min_cost": 17.04,
+        "mean_cost": 18.4352,
+        "best_cost": 17.04,
+        "details": {
+            "simulation_time": 17.04
+        }
+    },
+    {
+        "generation": 3,
+        "min_cost": 16.88,
+        "mean_cost": 18.0104,
+        "best_cost": 16.88,
+        "details": {
+            "simulation_time": 16.88
+        }
+    },
+    {
+        "generation": 4,
+        "min_cost": 16.299999999999997,
+        "mean_cost": 18.064,
+        "best_cost": 16.299999999999997,
+        "details": {
+            "simulation_time": 16.299999999999997
+        }
+    },
+    {
+        "generation": 5,
+        "min_cost": 16.400000000000002,
+        "mean_cost": 17.653599999999997,
+        "best_cost": 16.299999999999997,
+        "details": {
+            "simulation_time": 16.299999999999997
+        }
+    },
+    {
+        "generation": 6,
+        "min_cost": 16.38,
+        "mean_cost": 17.7232,
+        "best_cost": 16.299999999999997,
+        "details": {
+            "simulation_time": 16.299999999999997
+        }
+    },
+    {
+        "generation": 7,
+        "min_cost": 16.099999999999998,
+        "mean_cost": 17.500799999999998,
+        "best_cost": 16.099999999999998,
+        "details": {
+            "simulation_time": 16.099999999999998
+        }
+    },
+    {
+        "generation": 8,
+        "min_cost": 16.080000000000002,
+        "mean_cost": 17.325599999999998,
+        "best_cost": 16.080000000000002,
+        "details": {
+            "simulation_time": 16.080000000000002
+        }
+    },
+    {
+        "generation": 9,
+        "min_cost": 15.96,
+        "mean_cost": 16.8712,
+        "best_cost": 15.96,
+        "details": {
+            "simulation_time": 15.96
+        }
+    },
+    {
+        "generation": 10,
+        "min_cost": 15.22,
+        "mean_cost": 16.760800000000003,
+        "best_cost": 15.22,
+        "details": {
+            "simulation_time": 15.22
+        }
+    },
+    {
+        "generation": 11,
+        "min_cost": 15.74,
+        "mean_cost": 16.82,
+        "best_cost": 15.22,
+        "details": {
+            "simulation_time": 15.22
+        }
+    },
+    {
+        "generation": 12,
+        "min_cost": 14.04,
+        "mean_cost": 16.4568,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 13,
+        "min_cost": 15.620000000000001,
+        "mean_cost": 16.512,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 14,
+        "min_cost": 15.72,
+        "mean_cost": 16.5576,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 15,
+        "min_cost": 15.66,
+        "mean_cost": 16.691200000000002,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 16,
+        "min_cost": 15.700000000000001,
+        "mean_cost": 16.7824,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 17,
+        "min_cost": 15.68,
+        "mean_cost": 16.191200000000002,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 18,
+        "min_cost": 15.72,
+        "mean_cost": 16.2592,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 19,
+        "min_cost": 15.700000000000001,
+        "mean_cost": 16.456,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 20,
+        "min_cost": 15.74,
+        "mean_cost": 16.3168,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 21,
+        "min_cost": 15.620000000000001,
+        "mean_cost": 16.1912,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 22,
+        "min_cost": 15.600000000000001,
+        "mean_cost": 16.2528,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 23,
+        "min_cost": 15.68,
+        "mean_cost": 16.3072,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 24,
+        "min_cost": 15.700000000000001,
+        "mean_cost": 16.426399999999997,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 25,
+        "min_cost": 15.700000000000001,
+        "mean_cost": 16.452800000000003,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 26,
+        "min_cost": 15.68,
+        "mean_cost": 16.4208,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 27,
+        "min_cost": 15.700000000000001,
+        "mean_cost": 16.3424,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 28,
+        "min_cost": 15.72,
+        "mean_cost": 16.2984,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 29,
+        "min_cost": 15.66,
+        "mean_cost": 16.1968,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 30,
+        "min_cost": 15.620000000000001,
+        "mean_cost": 16.032000000000004,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 31,
+        "min_cost": 15.58,
+        "mean_cost": 16.0992,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 32,
+        "min_cost": 15.68,
+        "mean_cost": 16.076800000000002,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 33,
+        "min_cost": 15.700000000000001,
+        "mean_cost": 15.9992,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 34,
+        "min_cost": 15.700000000000001,
+        "mean_cost": 16.272000000000002,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 35,
+        "min_cost": 15.58,
+        "mean_cost": 16.1856,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 36,
+        "min_cost": 15.700000000000001,
+        "mean_cost": 16.4024,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 37,
+        "min_cost": 15.700000000000001,
+        "mean_cost": 16.0912,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 38,
+        "min_cost": 15.700000000000001,
+        "mean_cost": 16.1368,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 39,
+        "min_cost": 15.68,
+        "mean_cost": 16.297600000000003,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 40,
+        "min_cost": 15.620000000000001,
+        "mean_cost": 16.171200000000002,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 41,
+        "min_cost": 15.14,
+        "mean_cost": 15.978399999999999,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 42,
+        "min_cost": 15.120000000000001,
+        "mean_cost": 16.1232,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 43,
+        "min_cost": 15.0,
+        "mean_cost": 16.145599999999998,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 44,
+        "min_cost": 14.86,
+        "mean_cost": 16.523999999999997,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 45,
+        "min_cost": 14.64,
+        "mean_cost": 16.212,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 46,
+        "min_cost": 14.52,
+        "mean_cost": 16.2752,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 47,
+        "min_cost": 14.5,
+        "mean_cost": 16.0544,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 48,
+        "min_cost": 14.459999999999999,
+        "mean_cost": 16.322400000000002,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 49,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 15.8904,
+        "best_cost": 14.04,
+        "details": {
+            "simulation_time": 14.04
+        }
+    },
+    {
+        "generation": 50,
+        "min_cost": 12.9,
+        "mean_cost": 15.945599999999999,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 51,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 15.8424,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 52,
+        "min_cost": 14.459999999999999,
+        "mean_cost": 15.7952,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 53,
+        "min_cost": 14.5,
+        "mean_cost": 15.78,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 54,
+        "min_cost": 14.559999999999999,
+        "mean_cost": 16.2576,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 55,
+        "min_cost": 13.719999999999999,
+        "mean_cost": 15.6552,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 56,
+        "min_cost": 14.58,
+        "mean_cost": 16.2248,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 57,
+        "min_cost": 14.42,
+        "mean_cost": 16.128800000000002,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 58,
+        "min_cost": 13.98,
+        "mean_cost": 15.7392,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 59,
+        "min_cost": 14.3,
+        "mean_cost": 16.0072,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 60,
+        "min_cost": 14.5,
+        "mean_cost": 15.6808,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 61,
+        "min_cost": 14.5,
+        "mean_cost": 15.8976,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 62,
+        "min_cost": 14.260000000000002,
+        "mean_cost": 15.601600000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 63,
+        "min_cost": 13.0,
+        "mean_cost": 15.512800000000002,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 64,
+        "min_cost": 13.900000000000002,
+        "mean_cost": 15.524000000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 65,
+        "min_cost": 14.48,
+        "mean_cost": 15.560800000000002,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 66,
+        "min_cost": 14.220000000000002,
+        "mean_cost": 15.283199999999999,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 67,
+        "min_cost": 14.04,
+        "mean_cost": 15.435200000000002,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 68,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 15.483200000000002,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 69,
+        "min_cost": 14.459999999999999,
+        "mean_cost": 15.447200000000002,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 70,
+        "min_cost": 14.2,
+        "mean_cost": 15.2336,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 71,
+        "min_cost": 14.079999999999998,
+        "mean_cost": 15.264000000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 72,
+        "min_cost": 14.260000000000002,
+        "mean_cost": 15.4672,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 73,
+        "min_cost": 14.3,
+        "mean_cost": 15.264000000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 74,
+        "min_cost": 14.28,
+        "mean_cost": 15.3352,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 75,
+        "min_cost": 14.3,
+        "mean_cost": 15.4176,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 76,
+        "min_cost": 13.940000000000001,
+        "mean_cost": 15.208,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 77,
+        "min_cost": 14.42,
+        "mean_cost": 15.308,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 78,
+        "min_cost": 14.340000000000002,
+        "mean_cost": 15.279200000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 79,
+        "min_cost": 14.399999999999999,
+        "mean_cost": 15.4256,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 80,
+        "min_cost": 14.5,
+        "mean_cost": 15.3216,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 81,
+        "min_cost": 14.260000000000002,
+        "mean_cost": 15.2872,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 82,
+        "min_cost": 14.5,
+        "mean_cost": 15.616800000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 83,
+        "min_cost": 14.239999999999998,
+        "mean_cost": 15.389599999999998,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 84,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 15.1832,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 85,
+        "min_cost": 14.42,
+        "mean_cost": 15.600800000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 86,
+        "min_cost": 14.48,
+        "mean_cost": 15.4344,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 87,
+        "min_cost": 14.42,
+        "mean_cost": 15.6832,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 88,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 15.2928,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 89,
+        "min_cost": 14.44,
+        "mean_cost": 15.291999999999998,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 90,
+        "min_cost": 14.0,
+        "mean_cost": 14.9824,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 91,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 15.324799999999998,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 92,
+        "min_cost": 14.060000000000002,
+        "mean_cost": 15.012000000000002,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 93,
+        "min_cost": 14.42,
+        "mean_cost": 15.2704,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 94,
+        "min_cost": 14.3,
+        "mean_cost": 15.3568,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 95,
+        "min_cost": 14.42,
+        "mean_cost": 15.101600000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 96,
+        "min_cost": 14.44,
+        "mean_cost": 15.421599999999998,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 97,
+        "min_cost": 14.060000000000002,
+        "mean_cost": 15.088000000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 98,
+        "min_cost": 14.260000000000002,
+        "mean_cost": 15.188000000000002,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 99,
+        "min_cost": 14.399999999999999,
+        "mean_cost": 15.2432,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 100,
+        "min_cost": 14.220000000000002,
+        "mean_cost": 15.159199999999998,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 101,
+        "min_cost": 14.32,
+        "mean_cost": 15.092,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 102,
+        "min_cost": 14.239999999999998,
+        "mean_cost": 15.008,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 103,
+        "min_cost": 14.48,
+        "mean_cost": 15.010399999999999,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 104,
+        "min_cost": 14.260000000000002,
+        "mean_cost": 14.978399999999999,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 105,
+        "min_cost": 14.28,
+        "mean_cost": 15.008799999999999,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 106,
+        "min_cost": 14.399999999999999,
+        "mean_cost": 15.012,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 107,
+        "min_cost": 14.260000000000002,
+        "mean_cost": 15.088000000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 108,
+        "min_cost": 14.36,
+        "mean_cost": 15.0424,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 109,
+        "min_cost": 14.36,
+        "mean_cost": 15.039200000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 110,
+        "min_cost": 14.36,
+        "mean_cost": 15.1832,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 111,
+        "min_cost": 14.32,
+        "mean_cost": 15.090399999999999,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 112,
+        "min_cost": 14.48,
+        "mean_cost": 15.175999999999998,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 113,
+        "min_cost": 14.48,
+        "mean_cost": 15.4256,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 114,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 15.152000000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 115,
+        "min_cost": 14.2,
+        "mean_cost": 15.1416,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 116,
+        "min_cost": 14.100000000000001,
+        "mean_cost": 15.2104,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 117,
+        "min_cost": 14.220000000000002,
+        "mean_cost": 15.163999999999998,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 118,
+        "min_cost": 14.12,
+        "mean_cost": 14.873600000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 119,
+        "min_cost": 13.36,
+        "mean_cost": 14.8368,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 120,
+        "min_cost": 14.020000000000001,
+        "mean_cost": 14.859200000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 121,
+        "min_cost": 13.22,
+        "mean_cost": 15.112,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 122,
+        "min_cost": 14.3,
+        "mean_cost": 15.1144,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 123,
+        "min_cost": 13.959999999999999,
+        "mean_cost": 15.076,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 124,
+        "min_cost": 14.28,
+        "mean_cost": 14.9536,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 125,
+        "min_cost": 14.100000000000001,
+        "mean_cost": 15.0232,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 126,
+        "min_cost": 14.48,
+        "mean_cost": 15.264799999999997,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 127,
+        "min_cost": 14.020000000000001,
+        "mean_cost": 15.0376,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 128,
+        "min_cost": 13.780000000000001,
+        "mean_cost": 14.956799999999998,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 129,
+        "min_cost": 14.340000000000002,
+        "mean_cost": 14.9904,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 130,
+        "min_cost": 14.12,
+        "mean_cost": 14.836000000000002,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 131,
+        "min_cost": 14.42,
+        "mean_cost": 15.0184,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 132,
+        "min_cost": 14.36,
+        "mean_cost": 15.137599999999997,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 133,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 15.036800000000001,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 134,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 14.8928,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 135,
+        "min_cost": 14.12,
+        "mean_cost": 15.0712,
+        "best_cost": 12.9,
+        "details": {
+            "simulation_time": 12.9
+        }
+    },
+    {
+        "generation": 136,
+        "min_cost": 12.84,
+        "mean_cost": 14.739200000000004,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 137,
+        "min_cost": 14.340000000000002,
+        "mean_cost": 14.954399999999998,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 138,
+        "min_cost": 14.239999999999998,
+        "mean_cost": 14.931199999999999,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 139,
+        "min_cost": 14.32,
+        "mean_cost": 14.871199999999998,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 140,
+        "min_cost": 14.079999999999998,
+        "mean_cost": 14.9104,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 141,
+        "min_cost": 14.16,
+        "mean_cost": 15.0496,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 142,
+        "min_cost": 14.32,
+        "mean_cost": 15.021600000000001,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 143,
+        "min_cost": 14.48,
+        "mean_cost": 14.9576,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 144,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 14.777600000000001,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 145,
+        "min_cost": 14.399999999999999,
+        "mean_cost": 14.819199999999999,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 146,
+        "min_cost": 14.399999999999999,
+        "mean_cost": 14.9504,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 147,
+        "min_cost": 14.239999999999998,
+        "mean_cost": 15.0472,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 148,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 14.9408,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 149,
+        "min_cost": 14.399999999999999,
+        "mean_cost": 14.9832,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 150,
+        "min_cost": 14.399999999999999,
+        "mean_cost": 15.123199999999999,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 151,
+        "min_cost": 14.340000000000002,
+        "mean_cost": 14.9768,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 152,
+        "min_cost": 14.399999999999999,
+        "mean_cost": 15.137600000000003,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 153,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 15.095199999999998,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 154,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 14.863199999999999,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 155,
+        "min_cost": 14.36,
+        "mean_cost": 14.7344,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 156,
+        "min_cost": 13.18,
+        "mean_cost": 15.111200000000002,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 157,
+        "min_cost": 14.399999999999999,
+        "mean_cost": 15.2744,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 158,
+        "min_cost": 14.399999999999999,
+        "mean_cost": 15.281600000000001,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 159,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 14.814400000000001,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 160,
+        "min_cost": 14.44,
+        "mean_cost": 15.011199999999999,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 161,
+        "min_cost": 14.260000000000002,
+        "mean_cost": 14.9504,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 162,
+        "min_cost": 14.12,
+        "mean_cost": 14.711999999999998,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 163,
+        "min_cost": 14.379999999999999,
+        "mean_cost": 15.1224,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 164,
+        "min_cost": 13.940000000000001,
+        "mean_cost": 14.6416,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 165,
+        "min_cost": 13.639999999999999,
+        "mean_cost": 14.963200000000002,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 166,
+        "min_cost": 13.759999999999998,
+        "mean_cost": 15.163999999999998,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 167,
+        "min_cost": 13.799999999999999,
+        "mean_cost": 15.087200000000003,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 168,
+        "min_cost": 13.599999999999998,
+        "mean_cost": 14.836799999999998,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 169,
+        "min_cost": 13.260000000000002,
+        "mean_cost": 14.766399999999999,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 170,
+        "min_cost": 13.399999999999999,
+        "mean_cost": 14.799999999999997,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 171,
+        "min_cost": 14.060000000000002,
+        "mean_cost": 14.8472,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 172,
+        "min_cost": 13.799999999999999,
+        "mean_cost": 14.870400000000002,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 173,
+        "min_cost": 13.06,
+        "mean_cost": 14.888799999999998,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 174,
+        "min_cost": 14.3,
+        "mean_cost": 14.939199999999998,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 175,
+        "min_cost": 13.100000000000001,
+        "mean_cost": 15.039200000000001,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 176,
+        "min_cost": 13.759999999999998,
+        "mean_cost": 14.798399999999999,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 177,
+        "min_cost": 13.439999999999998,
+        "mean_cost": 14.8256,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 178,
+        "min_cost": 13.639999999999999,
+        "mean_cost": 14.826400000000001,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 179,
+        "min_cost": 13.36,
+        "mean_cost": 14.881599999999999,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 180,
+        "min_cost": 13.940000000000001,
+        "mean_cost": 15.2376,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 181,
+        "min_cost": 14.100000000000001,
+        "mean_cost": 15.1808,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 182,
+        "min_cost": 14.04,
+        "mean_cost": 15.159199999999998,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 183,
+        "min_cost": 14.559999999999999,
+        "mean_cost": 15.0576,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 184,
+        "min_cost": 13.46,
+        "mean_cost": 15.012,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 185,
+        "min_cost": 13.959999999999999,
+        "mean_cost": 15.020000000000003,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 186,
+        "min_cost": 13.120000000000001,
+        "mean_cost": 14.918399999999998,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 187,
+        "min_cost": 13.239999999999998,
+        "mean_cost": 14.8368,
+        "best_cost": 12.84,
+        "details": {
+            "simulation_time": 12.84
+        }
+    },
+    {
+        "generation": 188,
+        "min_cost": 12.059999999999999,
+        "mean_cost": 14.632,
+        "best_cost": 12.059999999999999,
+        "details": {
+            "simulation_time": 12.059999999999999
+        }
+    },
+    {
+        "generation": 189,
+        "min_cost": 12.48,
+        "mean_cost": 14.6784,
+        "best_cost": 12.059999999999999,
+        "details": {
+            "simulation_time": 12.059999999999999
+        }
+    },
+    {
+        "generation": 190,
+        "min_cost": 13.38,
+        "mean_cost": 14.8928,
+        "best_cost": 12.059999999999999,
+        "details": {
+            "simulation_time": 12.059999999999999
+        }
+    },
+    {
+        "generation": 191,
+        "min_cost": 13.02,
+        "mean_cost": 14.7424,
+        "best_cost": 12.059999999999999,
+        "details": {
+            "simulation_time": 12.059999999999999
+        }
+    },
+    {
+        "generation": 192,
+        "min_cost": 14.020000000000001,
+        "mean_cost": 15.0832,
+        "best_cost": 12.059999999999999,
+        "details": {
+            "simulation_time": 12.059999999999999
+        }
+    },
+    {
+        "generation": 193,
+        "min_cost": 11.280000000000001,
+        "mean_cost": 14.749600000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 194,
+        "min_cost": 13.279999999999998,
+        "mean_cost": 14.86,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 195,
+        "min_cost": 13.100000000000001,
+        "mean_cost": 14.770400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 196,
+        "min_cost": 13.700000000000001,
+        "mean_cost": 14.5944,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 197,
+        "min_cost": 14.079999999999998,
+        "mean_cost": 14.9488,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 198,
+        "min_cost": 12.1,
+        "mean_cost": 14.8288,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 199,
+        "min_cost": 13.799999999999999,
+        "mean_cost": 14.7304,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 200,
+        "min_cost": 12.74,
+        "mean_cost": 14.640800000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 201,
+        "min_cost": 12.74,
+        "mean_cost": 14.6592,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 202,
+        "min_cost": 13.799999999999999,
+        "mean_cost": 15.0096,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 203,
+        "min_cost": 13.719999999999999,
+        "mean_cost": 15.26,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 204,
+        "min_cost": 13.18,
+        "mean_cost": 15.008,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 205,
+        "min_cost": 13.100000000000001,
+        "mean_cost": 14.9032,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 206,
+        "min_cost": 12.76,
+        "mean_cost": 14.626399999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 207,
+        "min_cost": 12.14,
+        "mean_cost": 14.6536,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 208,
+        "min_cost": 13.580000000000002,
+        "mean_cost": 14.894399999999997,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 209,
+        "min_cost": 13.68,
+        "mean_cost": 14.5976,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 210,
+        "min_cost": 13.620000000000001,
+        "mean_cost": 14.696800000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 211,
+        "min_cost": 13.06,
+        "mean_cost": 14.8512,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 212,
+        "min_cost": 13.620000000000001,
+        "mean_cost": 15.0056,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 213,
+        "min_cost": 13.3,
+        "mean_cost": 14.948,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 214,
+        "min_cost": 13.279999999999998,
+        "mean_cost": 14.684,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 215,
+        "min_cost": 13.759999999999998,
+        "mean_cost": 14.847199999999997,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 216,
+        "min_cost": 13.66,
+        "mean_cost": 14.861600000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 217,
+        "min_cost": 13.580000000000002,
+        "mean_cost": 15.0352,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 218,
+        "min_cost": 12.32,
+        "mean_cost": 14.7552,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 219,
+        "min_cost": 13.5,
+        "mean_cost": 14.783999999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 220,
+        "min_cost": 13.66,
+        "mean_cost": 14.684800000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 221,
+        "min_cost": 13.599999999999998,
+        "mean_cost": 14.9768,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 222,
+        "min_cost": 13.36,
+        "mean_cost": 14.968800000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 223,
+        "min_cost": 13.3,
+        "mean_cost": 14.604000000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 224,
+        "min_cost": 12.620000000000001,
+        "mean_cost": 14.928799999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 225,
+        "min_cost": 13.66,
+        "mean_cost": 15.0,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 226,
+        "min_cost": 12.88,
+        "mean_cost": 14.7992,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 227,
+        "min_cost": 13.439999999999998,
+        "mean_cost": 14.7336,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 228,
+        "min_cost": 13.06,
+        "mean_cost": 14.735199999999997,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 229,
+        "min_cost": 13.040000000000001,
+        "mean_cost": 15.119999999999997,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 230,
+        "min_cost": 13.18,
+        "mean_cost": 15.0456,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 231,
+        "min_cost": 13.479999999999999,
+        "mean_cost": 14.566400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 232,
+        "min_cost": 13.14,
+        "mean_cost": 14.719200000000003,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 233,
+        "min_cost": 13.279999999999998,
+        "mean_cost": 14.815199999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 234,
+        "min_cost": 13.040000000000001,
+        "mean_cost": 14.6752,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 235,
+        "min_cost": 13.18,
+        "mean_cost": 14.7224,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 236,
+        "min_cost": 13.38,
+        "mean_cost": 14.8464,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 237,
+        "min_cost": 13.439999999999998,
+        "mean_cost": 14.792800000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 238,
+        "min_cost": 13.08,
+        "mean_cost": 14.271199999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 239,
+        "min_cost": 13.18,
+        "mean_cost": 14.8104,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 240,
+        "min_cost": 13.100000000000001,
+        "mean_cost": 14.9656,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 241,
+        "min_cost": 12.72,
+        "mean_cost": 14.3696,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 242,
+        "min_cost": 13.46,
+        "mean_cost": 14.7704,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 243,
+        "min_cost": 13.279999999999998,
+        "mean_cost": 14.436,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 244,
+        "min_cost": 13.260000000000002,
+        "mean_cost": 14.602400000000003,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 245,
+        "min_cost": 13.18,
+        "mean_cost": 14.5928,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 246,
+        "min_cost": 13.18,
+        "mean_cost": 14.7416,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 247,
+        "min_cost": 13.100000000000001,
+        "mean_cost": 14.548799999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 248,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 14.418399999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 249,
+        "min_cost": 13.18,
+        "mean_cost": 14.716800000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 250,
+        "min_cost": 12.76,
+        "mean_cost": 14.6264,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 251,
+        "min_cost": 13.18,
+        "mean_cost": 14.746400000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 252,
+        "min_cost": 13.18,
+        "mean_cost": 14.704799999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 253,
+        "min_cost": 12.76,
+        "mean_cost": 14.9168,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 254,
+        "min_cost": 13.18,
+        "mean_cost": 14.6736,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 255,
+        "min_cost": 13.100000000000001,
+        "mean_cost": 14.628,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 256,
+        "min_cost": 13.18,
+        "mean_cost": 14.700800000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 257,
+        "min_cost": 13.18,
+        "mean_cost": 14.684799999999997,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 258,
+        "min_cost": 12.72,
+        "mean_cost": 14.4944,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 259,
+        "min_cost": 13.040000000000001,
+        "mean_cost": 14.991999999999997,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 260,
+        "min_cost": 13.18,
+        "mean_cost": 14.599199999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 261,
+        "min_cost": 12.9,
+        "mean_cost": 14.3504,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 262,
+        "min_cost": 13.120000000000001,
+        "mean_cost": 14.499999999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 263,
+        "min_cost": 13.06,
+        "mean_cost": 14.583200000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 264,
+        "min_cost": 13.08,
+        "mean_cost": 14.761600000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 265,
+        "min_cost": 13.18,
+        "mean_cost": 14.355200000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 266,
+        "min_cost": 12.98,
+        "mean_cost": 14.4312,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 267,
+        "min_cost": 13.06,
+        "mean_cost": 14.3192,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 268,
+        "min_cost": 13.06,
+        "mean_cost": 14.692800000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 269,
+        "min_cost": 13.040000000000001,
+        "mean_cost": 14.581599999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 270,
+        "min_cost": 12.74,
+        "mean_cost": 14.3568,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 271,
+        "min_cost": 13.02,
+        "mean_cost": 14.3912,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 272,
+        "min_cost": 13.36,
+        "mean_cost": 14.423200000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 273,
+        "min_cost": 13.260000000000002,
+        "mean_cost": 14.208799999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 274,
+        "min_cost": 13.18,
+        "mean_cost": 14.353599999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 275,
+        "min_cost": 13.18,
+        "mean_cost": 14.427200000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 276,
+        "min_cost": 13.18,
+        "mean_cost": 14.636,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 277,
+        "min_cost": 13.100000000000001,
+        "mean_cost": 14.291199999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 278,
+        "min_cost": 13.08,
+        "mean_cost": 14.556799999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 279,
+        "min_cost": 13.06,
+        "mean_cost": 14.468,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 280,
+        "min_cost": 13.100000000000001,
+        "mean_cost": 14.696800000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 281,
+        "min_cost": 13.08,
+        "mean_cost": 14.408,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 282,
+        "min_cost": 13.100000000000001,
+        "mean_cost": 14.584000000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 283,
+        "min_cost": 13.22,
+        "mean_cost": 14.7408,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 284,
+        "min_cost": 13.18,
+        "mean_cost": 15.031199999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 285,
+        "min_cost": 13.040000000000001,
+        "mean_cost": 14.437599999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 286,
+        "min_cost": 12.940000000000001,
+        "mean_cost": 14.844000000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 287,
+        "min_cost": 13.18,
+        "mean_cost": 14.766399999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 288,
+        "min_cost": 13.540000000000001,
+        "mean_cost": 14.1872,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 289,
+        "min_cost": 12.74,
+        "mean_cost": 14.1024,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 290,
+        "min_cost": 13.120000000000001,
+        "mean_cost": 14.686399999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 291,
+        "min_cost": 12.96,
+        "mean_cost": 14.172,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 292,
+        "min_cost": 12.8,
+        "mean_cost": 14.3576,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 293,
+        "min_cost": 13.239999999999998,
+        "mean_cost": 14.4192,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 294,
+        "min_cost": 13.02,
+        "mean_cost": 14.395999999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 295,
+        "min_cost": 12.74,
+        "mean_cost": 14.149599999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 296,
+        "min_cost": 13.239999999999998,
+        "mean_cost": 14.708000000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 297,
+        "min_cost": 12.92,
+        "mean_cost": 14.187199999999997,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 298,
+        "min_cost": 13.02,
+        "mean_cost": 14.152000000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 299,
+        "min_cost": 13.08,
+        "mean_cost": 14.216800000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 300,
+        "min_cost": 13.260000000000002,
+        "mean_cost": 14.7704,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 301,
+        "min_cost": 12.72,
+        "mean_cost": 14.670399999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 302,
+        "min_cost": 13.100000000000001,
+        "mean_cost": 14.9048,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 303,
+        "min_cost": 13.34,
+        "mean_cost": 15.095999999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 304,
+        "min_cost": 12.9,
+        "mean_cost": 14.3272,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 305,
+        "min_cost": 13.18,
+        "mean_cost": 14.4728,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 306,
+        "min_cost": 13.159999999999998,
+        "mean_cost": 14.0,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 307,
+        "min_cost": 12.74,
+        "mean_cost": 14.52,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 308,
+        "min_cost": 13.0,
+        "mean_cost": 14.238400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 309,
+        "min_cost": 13.279999999999998,
+        "mean_cost": 14.268000000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 310,
+        "min_cost": 13.3,
+        "mean_cost": 14.3464,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 311,
+        "min_cost": 13.040000000000001,
+        "mean_cost": 14.5504,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 312,
+        "min_cost": 13.14,
+        "mean_cost": 14.4672,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 313,
+        "min_cost": 13.040000000000001,
+        "mean_cost": 14.5048,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 314,
+        "min_cost": 13.06,
+        "mean_cost": 14.561599999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 315,
+        "min_cost": 13.040000000000001,
+        "mean_cost": 14.283999999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 316,
+        "min_cost": 13.18,
+        "mean_cost": 14.419199999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 317,
+        "min_cost": 13.040000000000001,
+        "mean_cost": 13.9952,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 318,
+        "min_cost": 13.36,
+        "mean_cost": 14.4968,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 319,
+        "min_cost": 13.36,
+        "mean_cost": 14.2704,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 320,
+        "min_cost": 12.96,
+        "mean_cost": 14.4704,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 321,
+        "min_cost": 13.14,
+        "mean_cost": 14.205599999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 322,
+        "min_cost": 13.2,
+        "mean_cost": 14.2152,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 323,
+        "min_cost": 13.040000000000001,
+        "mean_cost": 13.903200000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 324,
+        "min_cost": 12.88,
+        "mean_cost": 14.323200000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 325,
+        "min_cost": 12.76,
+        "mean_cost": 14.546399999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 326,
+        "min_cost": 13.02,
+        "mean_cost": 13.992799999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 327,
+        "min_cost": 13.100000000000001,
+        "mean_cost": 14.111199999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 328,
+        "min_cost": 12.92,
+        "mean_cost": 14.607999999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 329,
+        "min_cost": 12.98,
+        "mean_cost": 14.264000000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 330,
+        "min_cost": 13.0,
+        "mean_cost": 13.9816,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 331,
+        "min_cost": 13.120000000000001,
+        "mean_cost": 14.163200000000003,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 332,
+        "min_cost": 13.100000000000001,
+        "mean_cost": 14.2104,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 333,
+        "min_cost": 13.06,
+        "mean_cost": 13.936000000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 334,
+        "min_cost": 13.14,
+        "mean_cost": 13.896,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 335,
+        "min_cost": 13.159999999999998,
+        "mean_cost": 14.018400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 336,
+        "min_cost": 12.74,
+        "mean_cost": 13.693600000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 337,
+        "min_cost": 12.86,
+        "mean_cost": 13.6888,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 338,
+        "min_cost": 13.38,
+        "mean_cost": 14.4936,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 339,
+        "min_cost": 12.8,
+        "mean_cost": 14.008799999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 340,
+        "min_cost": 12.86,
+        "mean_cost": 13.8488,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 341,
+        "min_cost": 13.02,
+        "mean_cost": 13.8456,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 342,
+        "min_cost": 13.0,
+        "mean_cost": 13.9104,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 343,
+        "min_cost": 12.8,
+        "mean_cost": 13.992,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 344,
+        "min_cost": 12.98,
+        "mean_cost": 13.911200000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 345,
+        "min_cost": 12.9,
+        "mean_cost": 13.8352,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 346,
+        "min_cost": 13.08,
+        "mean_cost": 14.280800000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 347,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 13.706399999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 348,
+        "min_cost": 12.82,
+        "mean_cost": 14.4712,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 349,
+        "min_cost": 12.940000000000001,
+        "mean_cost": 13.941600000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 350,
+        "min_cost": 12.72,
+        "mean_cost": 14.519199999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 351,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 13.7552,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 352,
+        "min_cost": 12.76,
+        "mean_cost": 13.6176,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 353,
+        "min_cost": 12.76,
+        "mean_cost": 14.208000000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 354,
+        "min_cost": 13.02,
+        "mean_cost": 14.006400000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 355,
+        "min_cost": 12.76,
+        "mean_cost": 13.714400000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 356,
+        "min_cost": 12.96,
+        "mean_cost": 13.856799999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 357,
+        "min_cost": 13.08,
+        "mean_cost": 14.027999999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 358,
+        "min_cost": 12.74,
+        "mean_cost": 13.697600000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 359,
+        "min_cost": 12.84,
+        "mean_cost": 14.050400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 360,
+        "min_cost": 12.82,
+        "mean_cost": 13.788800000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 361,
+        "min_cost": 12.8,
+        "mean_cost": 13.596800000000004,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 362,
+        "min_cost": 12.84,
+        "mean_cost": 13.914400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 363,
+        "min_cost": 12.86,
+        "mean_cost": 13.995200000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 364,
+        "min_cost": 12.92,
+        "mean_cost": 14.337600000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 365,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 14.0824,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 366,
+        "min_cost": 12.82,
+        "mean_cost": 13.972800000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 367,
+        "min_cost": 12.86,
+        "mean_cost": 13.9104,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 368,
+        "min_cost": 12.76,
+        "mean_cost": 13.9048,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 369,
+        "min_cost": 12.92,
+        "mean_cost": 13.9472,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 370,
+        "min_cost": 13.18,
+        "mean_cost": 13.8776,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 371,
+        "min_cost": 12.72,
+        "mean_cost": 13.7176,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 372,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 13.7608,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 373,
+        "min_cost": 12.74,
+        "mean_cost": 13.9488,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 374,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 13.7296,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 375,
+        "min_cost": 12.74,
+        "mean_cost": 13.886400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 376,
+        "min_cost": 12.86,
+        "mean_cost": 13.808799999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 377,
+        "min_cost": 12.76,
+        "mean_cost": 13.7904,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 378,
+        "min_cost": 12.98,
+        "mean_cost": 13.977600000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 379,
+        "min_cost": 12.76,
+        "mean_cost": 14.072000000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 380,
+        "min_cost": 12.76,
+        "mean_cost": 14.261599999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 381,
+        "min_cost": 12.86,
+        "mean_cost": 13.705599999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 382,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 13.726400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 383,
+        "min_cost": 12.74,
+        "mean_cost": 13.716,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 384,
+        "min_cost": 12.8,
+        "mean_cost": 13.948,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 385,
+        "min_cost": 12.86,
+        "mean_cost": 14.2664,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 386,
+        "min_cost": 12.72,
+        "mean_cost": 13.6472,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 387,
+        "min_cost": 12.940000000000001,
+        "mean_cost": 13.7576,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 388,
+        "min_cost": 12.72,
+        "mean_cost": 13.742400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 389,
+        "min_cost": 12.9,
+        "mean_cost": 13.7592,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 390,
+        "min_cost": 12.72,
+        "mean_cost": 13.7,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 391,
+        "min_cost": 12.96,
+        "mean_cost": 13.933599999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 392,
+        "min_cost": 12.72,
+        "mean_cost": 13.934399999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 393,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 13.7952,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 394,
+        "min_cost": 12.76,
+        "mean_cost": 13.3824,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 395,
+        "min_cost": 12.76,
+        "mean_cost": 13.8096,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 396,
+        "min_cost": 12.92,
+        "mean_cost": 13.716,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 397,
+        "min_cost": 12.76,
+        "mean_cost": 13.525600000000003,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 398,
+        "min_cost": 12.72,
+        "mean_cost": 13.834399999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 399,
+        "min_cost": 12.74,
+        "mean_cost": 13.7592,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 400,
+        "min_cost": 12.82,
+        "mean_cost": 13.8056,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 401,
+        "min_cost": 12.86,
+        "mean_cost": 13.9584,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 402,
+        "min_cost": 12.74,
+        "mean_cost": 13.9104,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 403,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 13.912799999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 404,
+        "min_cost": 12.76,
+        "mean_cost": 14.144,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 405,
+        "min_cost": 12.76,
+        "mean_cost": 13.6568,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 406,
+        "min_cost": 12.8,
+        "mean_cost": 13.8168,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 407,
+        "min_cost": 12.76,
+        "mean_cost": 14.093600000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 408,
+        "min_cost": 12.74,
+        "mean_cost": 13.909600000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 409,
+        "min_cost": 12.72,
+        "mean_cost": 13.816799999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 410,
+        "min_cost": 12.76,
+        "mean_cost": 13.984000000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 411,
+        "min_cost": 12.8,
+        "mean_cost": 13.791199999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 412,
+        "min_cost": 12.9,
+        "mean_cost": 14.052,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 413,
+        "min_cost": 12.82,
+        "mean_cost": 13.934399999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 414,
+        "min_cost": 12.76,
+        "mean_cost": 13.744000000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 415,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 14.184800000000003,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 416,
+        "min_cost": 12.8,
+        "mean_cost": 13.7368,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 417,
+        "min_cost": 12.8,
+        "mean_cost": 13.740800000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 418,
+        "min_cost": 12.74,
+        "mean_cost": 13.750399999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 419,
+        "min_cost": 12.76,
+        "mean_cost": 13.8528,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 420,
+        "min_cost": 12.84,
+        "mean_cost": 13.934399999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 421,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 14.0304,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 422,
+        "min_cost": 12.76,
+        "mean_cost": 13.6432,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 423,
+        "min_cost": 12.74,
+        "mean_cost": 13.9872,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 424,
+        "min_cost": 12.72,
+        "mean_cost": 13.650399999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 425,
+        "min_cost": 12.8,
+        "mean_cost": 13.7552,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 426,
+        "min_cost": 12.88,
+        "mean_cost": 13.684800000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 427,
+        "min_cost": 12.72,
+        "mean_cost": 13.540800000000004,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 428,
+        "min_cost": 12.86,
+        "mean_cost": 13.566400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 429,
+        "min_cost": 12.72,
+        "mean_cost": 13.72,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 430,
+        "min_cost": 12.76,
+        "mean_cost": 13.531199999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 431,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 13.7776,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 432,
+        "min_cost": 12.74,
+        "mean_cost": 13.498400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 433,
+        "min_cost": 12.84,
+        "mean_cost": 13.9472,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 434,
+        "min_cost": 12.76,
+        "mean_cost": 13.7344,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 435,
+        "min_cost": 12.74,
+        "mean_cost": 13.7664,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 436,
+        "min_cost": 12.74,
+        "mean_cost": 13.5912,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 437,
+        "min_cost": 12.74,
+        "mean_cost": 13.505600000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 438,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 13.222399999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 439,
+        "min_cost": 12.72,
+        "mean_cost": 13.5528,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 440,
+        "min_cost": 12.8,
+        "mean_cost": 13.802400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 441,
+        "min_cost": 12.76,
+        "mean_cost": 13.362400000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 442,
+        "min_cost": 12.72,
+        "mean_cost": 13.377600000000003,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 443,
+        "min_cost": 12.72,
+        "mean_cost": 13.4976,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 444,
+        "min_cost": 12.76,
+        "mean_cost": 13.3704,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 445,
+        "min_cost": 12.72,
+        "mean_cost": 13.475999999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 446,
+        "min_cost": 12.74,
+        "mean_cost": 13.344000000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 447,
+        "min_cost": 12.72,
+        "mean_cost": 13.5352,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 448,
+        "min_cost": 12.72,
+        "mean_cost": 13.554400000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 449,
+        "min_cost": 12.84,
+        "mean_cost": 13.696000000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 450,
+        "min_cost": 12.76,
+        "mean_cost": 13.510399999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 451,
+        "min_cost": 12.72,
+        "mean_cost": 13.6712,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 452,
+        "min_cost": 12.74,
+        "mean_cost": 13.536800000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 453,
+        "min_cost": 12.72,
+        "mean_cost": 13.4176,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 454,
+        "min_cost": 12.8,
+        "mean_cost": 13.210400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 455,
+        "min_cost": 12.72,
+        "mean_cost": 13.418400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 456,
+        "min_cost": 12.72,
+        "mean_cost": 13.2728,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 457,
+        "min_cost": 12.76,
+        "mean_cost": 13.643199999999997,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 458,
+        "min_cost": 12.72,
+        "mean_cost": 13.832,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 459,
+        "min_cost": 12.72,
+        "mean_cost": 13.337600000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 460,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 13.4176,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 461,
+        "min_cost": 12.76,
+        "mean_cost": 13.228000000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 462,
+        "min_cost": 12.72,
+        "mean_cost": 13.1528,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 463,
+        "min_cost": 12.74,
+        "mean_cost": 13.324000000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 464,
+        "min_cost": 12.72,
+        "mean_cost": 13.430400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 465,
+        "min_cost": 12.72,
+        "mean_cost": 13.258400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 466,
+        "min_cost": 12.72,
+        "mean_cost": 13.292799999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 467,
+        "min_cost": 12.72,
+        "mean_cost": 13.2024,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 468,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 13.258400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 469,
+        "min_cost": 12.74,
+        "mean_cost": 13.163200000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 470,
+        "min_cost": 12.72,
+        "mean_cost": 13.3584,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 471,
+        "min_cost": 12.72,
+        "mean_cost": 13.1,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 472,
+        "min_cost": 12.76,
+        "mean_cost": 13.392000000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 473,
+        "min_cost": 12.74,
+        "mean_cost": 13.1872,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 474,
+        "min_cost": 12.74,
+        "mean_cost": 13.334399999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 475,
+        "min_cost": 12.72,
+        "mean_cost": 13.1576,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 476,
+        "min_cost": 12.76,
+        "mean_cost": 13.4152,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 477,
+        "min_cost": 12.72,
+        "mean_cost": 13.3048,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 478,
+        "min_cost": 12.74,
+        "mean_cost": 12.9576,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 479,
+        "min_cost": 12.72,
+        "mean_cost": 13.0216,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 480,
+        "min_cost": 12.76,
+        "mean_cost": 13.546399999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 481,
+        "min_cost": 12.72,
+        "mean_cost": 13.255999999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 482,
+        "min_cost": 12.72,
+        "mean_cost": 13.3464,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 483,
+        "min_cost": 12.74,
+        "mean_cost": 13.685599999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 484,
+        "min_cost": 12.74,
+        "mean_cost": 13.2008,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 485,
+        "min_cost": 12.72,
+        "mean_cost": 13.684,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 486,
+        "min_cost": 12.74,
+        "mean_cost": 13.546399999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 487,
+        "min_cost": 12.76,
+        "mean_cost": 13.4752,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 488,
+        "min_cost": 12.780000000000001,
+        "mean_cost": 13.3752,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 489,
+        "min_cost": 12.74,
+        "mean_cost": 13.5088,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 490,
+        "min_cost": 12.76,
+        "mean_cost": 13.594399999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 491,
+        "min_cost": 12.72,
+        "mean_cost": 13.2696,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 492,
+        "min_cost": 12.74,
+        "mean_cost": 13.407200000000003,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 493,
+        "min_cost": 12.74,
+        "mean_cost": 13.292799999999998,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 494,
+        "min_cost": 12.72,
+        "mean_cost": 13.715200000000003,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 495,
+        "min_cost": 12.74,
+        "mean_cost": 13.3584,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 496,
+        "min_cost": 12.72,
+        "mean_cost": 13.430399999999999,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 497,
+        "min_cost": 12.74,
+        "mean_cost": 13.4696,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 498,
+        "min_cost": 12.72,
+        "mean_cost": 13.572000000000001,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 499,
+        "min_cost": 12.86,
+        "mean_cost": 13.420000000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    },
+    {
+        "generation": 500,
+        "min_cost": 12.72,
+        "mean_cost": 13.190400000000002,
+        "best_cost": 11.280000000000001,
+        "details": {
+            "simulation_time": 11.280000000000001
+        }
+    }
+]

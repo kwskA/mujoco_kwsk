@@ -5,7 +5,7 @@ from mujoco import mj_forward
 
 STANDING_INITIAL_POSE = {
     "pelvis_tx": 0.0,
-    "pelvis_ty": 0.950000,
+    "pelvis_ty": 0.9585,
     "pelvis_tilt": 0.0,
 
     "hip_flexion_r": 0.0,

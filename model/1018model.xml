@@ -115,13 +115,13 @@
               </body>
             </body>
           </body>
-          <body name="rect_fem_r_rect_fem_r-P3" pos="0 0 0.001399">
+          <body name="rect_fem_r_rect_fem_r-P3" pos="0 0 0.0014">
             <joint name="rect_fem_r_rect_fem_r-P3_x" pos="0 0 0" axis="1 0 0" type="slide" range="0.01558 0.0733"/>
             <joint name="rect_fem_r_rect_fem_r-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.06738 0.02531"/>
             <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
             <site name="rect_fem_r_rect_fem_r-P3" pos="0 0 0"/>
           </body>
-          <body name="vasti_r_vas_int_r-P4" pos="0 0 0.001799">
+          <body name="vasti_r_vas_int_r-P4" pos="0 0 0.0018">
             <joint name="vasti_r_vas_int_r-P4_x" pos="0 0 0" axis="1 0 0" type="slide" range="0.008273 0.06844"/>
             <joint name="vasti_r_vas_int_r-P4_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.06857 0.02752"/>
             <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
@@ -185,13 +185,13 @@
               </body>
             </body>
           </body>
-          <body name="rect_fem_l_rect_fem_l-P3" pos="0 0 -0.001401">
+          <body name="rect_fem_l_rect_fem_l-P3" pos="0 0 -0.0014">
             <joint name="rect_fem_l_rect_fem_l-P3_x" pos="0 0 0" axis="1 0 0" type="slide" range="0.01558 0.0733"/>
             <joint name="rect_fem_l_rect_fem_l-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.06738 0.02531"/>
             <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
             <site name="rect_fem_l_rect_fem_l-P3" pos="0 0 0"/>
           </body>
-          <body name="vasti_l_vas_int_l-P4" pos="0 0 -0.001801">
+          <body name="vasti_l_vas_int_l-P4" pos="0 0 -0.0018">
             <joint name="vasti_l_vas_int_l-P4_x" pos="0 0 0" axis="1 0 0" type="slide" range="0.008273 0.06844"/>
             <joint name="vasti_l_vas_int_l-P4_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.06857 0.02752"/>
             <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
@@ -386,24 +386,25 @@
     </spatial>
   </tendon>
   <actuator>
-    <general name="hamstrings_r" class="muscle" tendon="hamstrings_r_tendon" lengthrange="0.338137 0.526421" gainprm="0.0237377 1.52915 2456 1 0 2 10 1.21361 1.4 0" biasprm="0.0237377 1.52915 2456 1 0 2 10 1.21361 1.4 0"/>
-    <general name="bifemsh_r" class="muscle" tendon="bifemsh_r_tendon" lengthrange="0.191264 0.249268" gainprm="0.647963 1.37805 640.647 1 0 2 10 1.67573 1.4 0" biasprm="0.647963 1.37805 640.647 1 0 2 10 1.67573 1.4 0"/>
-    <general name="glut_max_r" class="muscle" tendon="glut_max_r_tendon" lengthrange="0.156724 0.27299" gainprm="0.01 1.12891 1670.26 1 0 2 10 2.70269 1.4 0" biasprm="0.01 1.12891 1670.26 1 0 2 10 2.70269 1.4 0"/>
-    <general name="iliopsoas_r" class="muscle" tendon="iliopsoas_r_tendon" lengthrange="0.202788 0.28868" gainprm="0.177317 1.5553 2166.47 1 0 2 10 0.922468 1.4 0" biasprm="0.177317 1.5553 2166.47 1 0 2 10 0.922468 1.4 0"/>
-    <general name="rect_fem_r" class="muscle" tendon="rect_fem_r_tendon" lengthrange="0.383692 0.508395" gainprm="0.301787 1.77259 841.266 1 0 2 10 1.35281 1.4 0" biasprm="0.301787 1.77259 841.266 1 0 2 10 1.35281 1.4 0"/>
-    <general name="vasti_r" class="muscle" tendon="vasti_r_tendon" lengthrange="0.173169 0.25581" gainprm="0.167885 1.6314 4926.68 1 0 2 10 0.801504 1.4 0" biasprm="0.167885 1.6314 4926.68 1 0 2 10 0.801504 1.4 0"/>
-    <general name="gastroc_r" class="muscle" tendon="gastroc_r_tendon" lengthrange="0.354064 0.493252" gainprm="0.01 1 2290.77 1 0 2 10 4.67649 1.4 0" biasprm="0.01 1 2290.77 1 0 2 10 4.67649 1.4 0"/>
-    <general name="soleus_r" class="muscle" tendon="soleus_r_tendon" lengthrange="0.228134 0.326673" gainprm="0.0196184 1.30496 3433.02 1 0 2 10 3.11971 1.4 0" biasprm="0.0196184 1.30496 3433.02 1 0 2 10 3.11971 1.4 0"/>
-    <general name="tib_ant_r" class="muscle" tendon="tib_ant_r_tendon" lengthrange="0.259564 0.352614" gainprm="0.0858784 1.67738 2683.61 1 0 2 10 1.06367 1.4 0" biasprm="0.0858784 1.67738 2683.61 1 0 2 10 1.06367 1.4 0"/>
-    <general name="hamstrings_l" class="muscle" tendon="hamstrings_l_tendon" lengthrange="0.338137 0.526421" gainprm="0.118713 1.30263 2489.58 1 0 2 10 1.96373 1.4 0" biasprm="0.118713 1.30263 2489.58 1 0 2 10 1.96373 1.4 0"/>
-    <general name="bifemsh_l" class="muscle" tendon="bifemsh_l_tendon" lengthrange="0.191264 0.249268" gainprm="0.655512 1.48193 631.067 1 0 2 10 1.4656 1.4 0" biasprm="0.655512 1.48193 631.067 1 0 2 10 1.4656 1.4 0"/>
-    <general name="glut_max_l" class="muscle" tendon="glut_max_l_tendon" lengthrange="0.156724 0.27299" gainprm="0.117066 1.40642 1118.28 1 0 2 10 3.75067 1.4 0" biasprm="0.117066 1.40642 1118.28 1 0 2 10 3.75067 1.4 0"/>
-    <general name="iliopsoas_l" class="muscle" tendon="iliopsoas_l_tendon" lengthrange="0.202788 0.28868" gainprm="0.122016 1.52889 2269.1 1 0 2 10 0.745088 1.4 0" biasprm="0.122016 1.52889 2269.1 1 0 2 10 0.745088 1.4 0"/>
-    <general name="rect_fem_l" class="muscle" tendon="rect_fem_l_tendon" lengthrange="0.383692 0.508395" gainprm="0.339135 1.48706 830.687 1 0 2 10 2.07856 1.4 0" biasprm="0.339135 1.48706 830.687 1 0 2 10 2.07856 1.4 0"/>
-    <general name="vasti_l" class="muscle" tendon="vasti_l_tendon" lengthrange="0.173168 0.25581" gainprm="0.155394 1.46878 5041.75 1 0 2 10 0.499227 1.4 0" biasprm="0.155394 1.46878 5041.75 1 0 2 10 0.499227 1.4 0"/>
-    <general name="gastroc_l" class="muscle" tendon="gastroc_l_tendon" lengthrange="0.354064 0.493252" gainprm="0.0471754 1.00657 2078.34 1 0 2 10 2.00636 1.4 0" biasprm="0.0471754 1.00657 2078.34 1 0 2 10 2.00636 1.4 0"/>
-    <general name="soleus_l" class="muscle" tendon="soleus_l_tendon" lengthrange="0.228134 0.326673" gainprm="0.101114 1.01922 4031.84 1 0 2 10 0.01 1.4 0" biasprm="0.101114 1.01922 4031.84 1 0 2 10 0.01 1.4 0"/>
-    <general name="tib_ant_l" class="muscle" tendon="tib_ant_l_tendon" lengthrange="0.259564 0.352614" gainprm="0.110446 1.3008 2946.36 1 0 2 10 0.750184 1.4 0" biasprm="0.110446 1.3008 2946.36 1 0 2 10 0.750184 1.4 0"/>
+    <general name="hamstrings_r" class="muscle" tendon="hamstrings_r_tendon" lengthrange="0.338137 0.526421" gainprm="0.071225 1.41589 2472.79 1 0 2 10 1.58867 1.4 0" biasprm="0.071225 1.41589 2472.79 1 0 2 10 1.58867 1.4 0"/>
+    <general name="bifemsh_r" class="muscle" tendon="bifemsh_r_tendon" lengthrange="0.191264 0.249268" gainprm="0.651738 1.42999 635.857 1 0 2 10 1.570665 1.4 0" biasprm="0.651738 1.42999 635.857 1 0 2 10 1.570665 1.4 0"/>
+    <general name="glut_max_r" class="muscle" tendon="glut_max_r_tendon" lengthrange="0.156724 0.27299" gainprm="0.063533 1.267665 1394.27 1 0 2 10 3.22668 1.4 0" biasprm="0.063533 1.267665 1394.27 1 0 2 10 3.22668 1.4 0"/>
+    <general name="iliopsoas_r" class="muscle" tendon="iliopsoas_r_tendon" lengthrange="0.202788 0.28868" gainprm="0.149667 1.542095 2217.785 1 0 2 10 0.833778 1.4 0" biasprm="0.149667 1.542095 2217.785 1 0 2 10 0.833778 1.4 0"/>
+    <general name="rect_fem_r" class="muscle" tendon="rect_fem_r_tendon" lengthrange="0.383692 0.508395" gainprm="0.320461 1.629825 835.977 1 0 2 10 1.715685 1.4 0" biasprm="0.320461 1.629825 835.977 1 0 2 10 1.715685 1.4 0"/>
+    <general name="vasti_r" class="muscle" tendon="vasti_r_tendon" lengthrange="0.173169 0.25581" gainprm="0.16164 1.55009 4984.215 1 0 2 10 0.650366 1.4 0" biasprm="0.16164 1.55009 4984.215 1 0 2 10 0.650366 1.4 0"/>
+    <general name="gastroc_r" class="muscle" tendon="gastroc_r_tendon" lengthrange="0.354064 0.493252" gainprm="0.028588 1.003285 2184.555 1 0 2 10 3.341425 1.4 0" biasprm="0.028588 1.003285 2184.555 1 0 2 10 3.341425 1.4 0"/>
+    <general name="soleus_r" class="muscle" tendon="soleus_r_tendon" lengthrange="0.228134 0.326673" gainprm="0.060366 1.16209 3732.43 1 0 2 10 1.564855 1.4 0" biasprm="0.060366 1.16209 3732.43 1 0 2 10 1.564855 1.4 0"/>
+    <general name="tib_ant_r" class="muscle" tendon="tib_ant_r_tendon" lengthrange="0.259564 0.352614" gainprm="0.098162 1.48909 2814.985 1 0 2 10 0.906927 1.4 0" biasprm="0.098162 1.48909 2814.985 1 0 2 10 0.906927 1.4 0"/>
+
+    <general name="hamstrings_l" class="muscle" tendon="hamstrings_l_tendon" lengthrange="0.338137 0.526421" gainprm="0.071225 1.41589 2472.79 1 0 2 10 1.58867 1.4 0" biasprm="0.071225 1.41589 2472.79 1 0 2 10 1.58867 1.4 0"/>
+    <general name="bifemsh_l" class="muscle" tendon="bifemsh_l_tendon" lengthrange="0.191264 0.249268" gainprm="0.651738 1.42999 635.857 1 0 2 10 1.570665 1.4 0" biasprm="0.651738 1.42999 635.857 1 0 2 10 1.570665 1.4 0"/>
+    <general name="glut_max_l" class="muscle" tendon="glut_max_l_tendon" lengthrange="0.156724 0.27299" gainprm="0.063533 1.267665 1394.27 1 0 2 10 3.22668 1.4 0" biasprm="0.063533 1.267665 1394.27 1 0 2 10 3.22668 1.4 0"/>
+    <general name="iliopsoas_l" class="muscle" tendon="iliopsoas_l_tendon" lengthrange="0.202788 0.28868" gainprm="0.149667 1.542095 2217.785 1 0 2 10 0.833778 1.4 0" biasprm="0.149667 1.542095 2217.785 1 0 2 10 0.833778 1.4 0"/>
+    <general name="rect_fem_l" class="muscle" tendon="rect_fem_l_tendon" lengthrange="0.383692 0.508395" gainprm="0.320461 1.629825 835.977 1 0 2 10 1.715685 1.4 0" biasprm="0.320461 1.629825 835.977 1 0 2 10 1.715685 1.4 0"/>
+    <general name="vasti_l" class="muscle" tendon="vasti_l_tendon" lengthrange="0.173168 0.25581" gainprm="0.16164 1.55009 4984.215 1 0 2 10 0.650366 1.4 0" biasprm="0.16164 1.55009 4984.215 1 0 2 10 0.650366 1.4 0"/>
+    <general name="gastroc_l" class="muscle" tendon="gastroc_l_tendon" lengthrange="0.354064 0.493252" gainprm="0.028588 1.003285 2184.555 1 0 2 10 3.341425 1.4 0" biasprm="0.028588 1.003285 2184.555 1 0 2 10 3.341425 1.4 0"/>
+    <general name="soleus_l" class="muscle" tendon="soleus_l_tendon" lengthrange="0.228134 0.326673" gainprm="0.060366 1.16209 3732.43 1 0 2 10 1.564855 1.4 0" biasprm="0.060366 1.16209 3732.43 1 0 2 10 1.564855 1.4 0"/>
+    <general name="tib_ant_l" class="muscle" tendon="tib_ant_l_tendon" lengthrange="0.259564 0.352614" gainprm="0.098162 1.48909 2814.985 1 0 2 10 0.906927 1.4 0" biasprm="0.098162 1.48909 2814.985 1 0 2 10 0.906927 1.4 0"/>
   </actuator>
   <keyframe>
     <key name="default-pose" qpos="0.00000000 0.95000000 0.00000000 0.00000000 -0.00363900 -0.395700 0.00000000 0.0000000 0.06259000 0.02032000 0.05647000 0.02476000 -0.22340000 0.02673000 -0.02915000 -0.40150000 -0.02562000 0.0000000 -0.00363900 -0.39570000 0.00000000 0.00000000 0.06259000 0.02032000 0.05647000 0.02476000 -0.22340000 -0.02673000 -0.02915000 -0.40150000 0.02562000 0.00000000 -0.02880000 -0.08050000 0.08160000 -0.02880000 -0.08050000 -0.08160000"/>
