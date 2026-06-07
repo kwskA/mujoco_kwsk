@@ -33,7 +33,7 @@ MUSCLES = MODEL_INFO.muscle_names
 
 SIM_STEPS = 1000
 
-DEBUG_KP = 5.0
+DEBUG_KP = 20.0
 DEBUG_KD = 2.0
 
 # target_length = initial_length * TARGET_SCALE

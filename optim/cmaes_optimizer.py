@@ -108,7 +108,7 @@ class CMAESOptimizer(BaseOptimizer):
             "tolx": 1e-12,
             "tolfunhist": 1e-12,
 
-            "seed": 42,
+            "seed": 903252,
 
         }
 

@@ -43,8 +43,8 @@
   </asset>
   <worldbody>
     <light pos="0 0 0" dir="0 0 -1" directional="true"/>
-    <geom name="com_marker" type="sphere" size="0.02" pos="0 0 1" rgba="0 1 0 1" contype="0" conaffinity="0"/>
-    <geom name="cop_marker" type="sphere" size="0.02" pos="1 0 0" rgba="0 1 0 1" contype="0" conaffinity="0"/>
+    <!-- <geom name="com_marker" type="sphere" size="0.02" pos="0 0 1" rgba="0 1 0 1" contype="0" conaffinity="0"/>
+    <geom name="cop_marker" type="sphere" size="0.02" pos="1 0 0" rgba="0 1 0 1" contype="0" conaffinity="0"/> -->
     <camera name="oblique" pos="1.499 -1.969 0.645" xyaxes="0.783 0.622 0.000 0.024 -0.030 0.999"/>
     <camera name="front" pos="1.995 -0.021 0.730" xyaxes="0.026 1.000 0.000 0.026 -0.001 1.000"/>
     <camera name="side" pos="0.059 -2.017 0.730" xyaxes="0.998 0.057 -0.000 0.001 -0.026 1.000"/>
@@ -52,11 +52,33 @@
     <body name="ground" quat="0.707035 0.707179 0 0">
       <geom name="ground-plane" size="10 10 0.125" quat="0.707035 -0.707179 0 0" type="plane" rgba="1 0.7 0.4 1"/>
     </body>
+        <body name="com_marker" mocap="true" pos="0 0 1">
+        <geom
+            name="com_marker_geom"
+            type="sphere"
+            size="0.025"
+            rgba="1 0 0 1"
+            contype="0"
+            conaffinity="0"/>
+    </body>
+
+    <body name="cop_marker" mocap="true" pos="0 0 0">
+        <geom
+            name="cop_marker_geom"
+            type="sphere"
+            size="0.025"
+            rgba="0 1 0 1"
+            contype="0"
+            conaffinity="0"/>
+    </body>
     <body name="pelvis" quat="0.707035 0.707179 0 0">
       <inertial pos="-0.0707 0 0" mass="11.777" diaginertia="0.1028 0.0871 0.0579"/>
       <joint name="pelvis_tx" pos="0 0 0" axis="1 0 0" limited="true" type="slide" range="-5 5" damping="0"/>
       <joint name="pelvis_ty" pos="0 0 0" axis="0 1 0" limited="true" type="slide" range="-1 2" damping="0" user="0.95"/>
+
       <joint name="pelvis_tilt" pos="0 0 0" axis="0 0 1" limited="true" range="-1.571 1.571" damping="0"/>
+
+      
       <geom name="pelvis_geom_1" type="mesh" rgba="1 1 1 1" mesh="pelvis_geom_1_sacrum"/>
       <geom name="pelvis_geom_2" type="mesh" rgba="1 1 1 1" mesh="pelvis_geom_2_pelvis"/>
       <geom name="pelvis_geom_3" type="mesh" rgba="1 1 1 1" mesh="pelvis_geom_3_l_pelvis"/>

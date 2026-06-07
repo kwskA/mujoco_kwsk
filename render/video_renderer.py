@@ -7,6 +7,7 @@ import mujoco
 
 from mujoco import MjData, mj_step, mj_forward
 
+
 CAMERA_PRESETS = {
     "front": {
         "azimuth": 90.0,
@@ -30,12 +31,19 @@ CAMERA_PRESETS = {
     },
 }
 
+
 class VideoRenderer:
     """
     MuJoCoシミュレーションを動画として保存するクラス。
 
     controllerで制御入力を計算しながら再シミュレーションし、
     tracking_body_nameで指定したbodyを追従して描画する。
+
+    XML側にmocap bodyとして以下を用意しておくと，
+    COMとCOPを動画中に表示できる。
+
+    - com_marker
+    - cop_marker
     """
 
     def __init__(
@@ -51,9 +59,23 @@ class VideoRenderer:
         camera_distance=3.0,
         camera_azimuth=90.0,
         camera_elevation=-15.0,
+        com_marker_body_name="com_marker",
+        cop_marker_body_name="cop_marker",
+        show_com=True,
+        show_cop=True,
+        vertical_axis=1,
     ):
         """
         動画出力に必要なモデル，制御器，描画設定を保存する。
+
+        vertical_axis
+        -------------
+        鉛直方向の軸。
+        このモデルでは pelvis_ty が上下方向なので，通常は 1 を使う。
+
+        0 : X軸
+        1 : Y軸
+        2 : Z軸
         """
 
         self.model = model
@@ -70,6 +92,20 @@ class VideoRenderer:
         self.camera_azimuth = float(camera_azimuth)
         self.camera_elevation = float(camera_elevation)
 
+        self.com_marker_body_name = com_marker_body_name
+        self.cop_marker_body_name = cop_marker_body_name
+
+        self.show_com = bool(show_com)
+        self.show_cop = bool(show_cop)
+
+        self.vertical_axis = int(vertical_axis)
+
+        if self.vertical_axis not in [0, 1, 2]:
+            raise ValueError(
+                "vertical_axis must be 0, 1, or 2. "
+                f"got {self.vertical_axis}"
+            )
+
         self.tracking_body_id = None
 
         if self.tracking_body_name is not None:
@@ -83,6 +119,71 @@ class VideoRenderer:
                 raise ValueError(
                     f"tracking body not found: {self.tracking_body_name}"
                 )
+
+        self.com_marker_body_id = self._get_body_id(
+            self.com_marker_body_name
+        )
+
+        self.cop_marker_body_id = self._get_body_id(
+            self.cop_marker_body_name
+        )
+
+        self.com_mocap_id = self._get_mocap_id(
+            body_id=self.com_marker_body_id,
+            body_name=self.com_marker_body_name,
+        )
+
+        self.cop_mocap_id = self._get_mocap_id(
+            body_id=self.cop_marker_body_id,
+            body_name=self.cop_marker_body_name,
+        )
+
+        self.last_cop_pos = None
+
+    def _get_body_id(self, body_name):
+        """
+        body名からbody idを取得する。
+        存在しない場合はNoneを返す。
+        """
+
+        if body_name is None:
+            return None
+
+        body_id = mujoco.mj_name2id(
+            self.model,
+            mujoco.mjtObj.mjOBJ_BODY,
+            body_name,
+        )
+
+        if body_id == -1:
+            return None
+
+        return body_id
+
+    def _get_mocap_id(
+        self,
+        body_id,
+        body_name,
+    ):
+        """
+        body idからmocap idを取得する。
+        bodyが存在しない場合，またはmocap bodyでない場合はNoneを返す。
+        """
+
+        if body_id is None:
+            return None
+
+        mocap_id = int(self.model.body_mocapid[body_id])
+
+        if mocap_id == -1:
+            print(
+                f"[VideoRenderer] warning: body '{body_name}' exists, "
+                "but it is not a mocap body. "
+                "COM/COP marker will not be updated."
+            )
+            return None
+
+        return mocap_id
 
     def reset_data(self, data):
         """
@@ -99,6 +200,21 @@ class VideoRenderer:
         data.ctrl[:] = 0.0
 
         mj_forward(self.model, data)
+
+        self.last_cop_pos = None
+
+        self._update_com_marker(data)
+
+        initial_cop = self._compute_cop(data)
+
+        if initial_cop is None:
+            initial_cop = data.subtree_com[0].copy()
+            initial_cop[self.vertical_axis] = 0.0
+
+        self.last_cop_pos = initial_cop.copy()
+
+        if self.cop_mocap_id is not None:
+            data.mocap_pos[self.cop_mocap_id] = initial_cop
 
     def _ensure_dir(self, path):
         """
@@ -132,6 +248,104 @@ class VideoRenderer:
         target_pos = data.xpos[self.tracking_body_id]
         cam.lookat[:] = target_pos
 
+    def _update_com_marker(self, data):
+        """
+        COMマーカーを全身COM位置に移動する。
+        """
+
+        if not self.show_com:
+            return
+
+        if self.com_mocap_id is None:
+            return
+
+        com_pos = data.subtree_com[0].copy()
+
+        data.mocap_pos[self.com_mocap_id] = com_pos
+
+    def _compute_cop(self, data):
+        """
+        接触点と接触法線力からCOPを計算する。
+
+        MuJoCoの mj_contactForce で得られる force_local[0] は
+        接触法線方向の力なので，これを重みとして接触位置を平均する。
+        """
+
+        weighted_pos = np.zeros(3)
+        total_normal_force = 0.0
+
+        ground_geom_id = mujoco.mj_name2id(
+            self.model,
+            mujoco.mjtObj.mjOBJ_GEOM,
+            "ground-plane",
+        )
+
+        for i in range(data.ncon):
+            contact = data.contact[i]
+
+            # 床との接触のみ使う
+            if ground_geom_id != -1:
+                if (
+                    contact.geom1 != ground_geom_id
+                    and contact.geom2 != ground_geom_id
+                ):
+                    continue
+
+            force_local = np.zeros(6)
+
+            mujoco.mj_contactForce(
+                self.model,
+                data,
+                i,
+                force_local,
+            )
+
+            # force_local[0] が接触法線方向の力
+            normal_force = force_local[0]
+
+            if normal_force <= 1.0e-8:
+                continue
+
+            contact_pos = contact.pos.copy()
+
+            weighted_pos += normal_force * contact_pos
+            total_normal_force += normal_force
+
+        if total_normal_force <= 1.0e-8:
+            return None
+
+        cop_pos = weighted_pos / total_normal_force
+
+        # このモデルはY軸が鉛直方向なので，COPを床面上に固定
+        cop_pos[self.vertical_axis] = 0.0
+
+        return cop_pos
+
+    def _update_cop_marker(self, data):
+        """
+        COPマーカーをCOP位置に移動する。
+
+        接触がない場合は直前のCOP位置を保持する。
+        """
+
+        if not self.show_cop:
+            return
+
+        if self.cop_mocap_id is None:
+            return
+
+        cop_pos = self._compute_cop(data)
+
+        if cop_pos is None:
+            if self.last_cop_pos is None:
+                return
+
+            cop_pos = self.last_cop_pos.copy()
+        else:
+            self.last_cop_pos = cop_pos.copy()
+
+        data.mocap_pos[self.cop_mocap_id] = cop_pos
+
     def render(
         self,
         save_path,
@@ -150,10 +364,6 @@ class VideoRenderer:
 
         data = MjData(self.model)
         self.reset_data(data)
-
-        # print("[VideoRenderer] initial_qpos[:8] =", self.initial_qpos[:8])
-        # print("[VideoRenderer] reset qpos[:8] =", data.qpos[:8])
-        # print("[VideoRenderer] reset com =", data.subtree_com[0])
 
         renderer = mujoco.Renderer(
             self.model,
@@ -181,6 +391,9 @@ class VideoRenderer:
                 data.ctrl[:] = ctrl
 
                 mj_step(self.model, data)
+
+                self._update_com_marker(data)
+                self._update_cop_marker(data)
 
                 if (
                     color_tendons
