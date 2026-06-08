@@ -133,39 +133,59 @@ def main():
 
     controller = build_controller(model)
 
-    # x0 = controller.make_initial_params(
-    #     init_Kp=10.0,
-    #     init_Kd=2.0,
-    #     init_target_length=init_len,
-    # )
+    x0 = controller.make_initial_params(
+        init_Kp=10.0,
+        init_Kd=2.0,
+        init_target_length=init_len,
+    )
 
-    SCONE_KP_KD = {
-        "hamstrings": {"Kp": 11.447057788827806, "Kd": 0.5672356839786517},
-        "bifemsh":   {"Kp": 10.736705385807000, "Kd": 0.9883024640312215},
-        "glut_max":  {"Kp": 8.379833415780013,  "Kd": 8.762719053298497},
-        "iliopsoas": {"Kp": 8.510325115799787,  "Kd": 4.820861976809738},
-        "rect_fem":  {"Kp": 12.243241227413819, "Kd": 0.35661551701414285},
-        "vasti":     {"Kp": 13.020649537404097, "Kd": 5.433820290985750},
-        "gastroc":   {"Kp": 11.697677854044741, "Kd": 2.871243381043314},
-        "soleus":    {"Kp": 9.698394821880356,  "Kd": 0.6579245587112381},
-        "tib_ant":   {"Kp": 12.730049150690320, "Kd": 3.9676162677205866},
-    }
+    # SCONE_KP_KD = {
+    #     "hamstrings": {"Kp": 11.447057788827806, "Kd": 0.5672356839786517},
+    #     "bifemsh":   {"Kp": 10.736705385807000, "Kd": 0.9883024640312215},
+    #     "glut_max":  {"Kp": 8.379833415780013,  "Kd": 8.762719053298497},
+    #     "iliopsoas": {"Kp": 8.510325115799787,  "Kd": 4.820861976809738},
+    #     "rect_fem":  {"Kp": 12.243241227413819, "Kd": 0.35661551701414285},
+    #     "vasti":     {"Kp": 13.020649537404097, "Kd": 5.433820290985750},
+    #     "gastroc":   {"Kp": 11.697677854044741, "Kd": 2.871243381043314},
+    #     "soleus":    {"Kp": 9.698394821880356,  "Kd": 0.6579245587112381},
+    #     "tib_ant":   {"Kp": 12.730049150690320, "Kd": 3.9676162677205866},
+    # }
 
-    kp_array = np.array([
-        SCONE_KP_KD[get_base_name(m)]["Kp"]
-        for m in MUSCLES
-    ])
+    
 
-    kd_array = np.array([
-        SCONE_KP_KD[get_base_name(m)]["Kd"]
-        for m in MUSCLES
-    ])
+    # if USE_SYMMETRIC_PARAMS:
+    #     base_muscles = MUSCLES[: len(MUSCLES) // 2]
 
-    x0 = np.concatenate([
-        kp_array,
-        kd_array,
-        init_len.copy(),
-    ])
+    #     kp_array = np.array([
+    #         SCONE_KP_KD[get_base_name(m)]["Kp"]
+    #         for m in base_muscles
+    #     ])
+
+    #     kd_array = np.array([
+    #         SCONE_KP_KD[get_base_name(m)]["Kd"]
+    #         for m in base_muscles
+    #     ])
+
+    #     target_len_array = init_len[: len(MUSCLES) // 2].copy()
+
+    # else:
+    #     kp_array = np.array([
+    #         SCONE_KP_KD[get_base_name(m)]["Kp"]
+    #         for m in MUSCLES
+    #     ])
+
+    #     kd_array = np.array([
+    #         SCONE_KP_KD[get_base_name(m)]["Kd"]
+    #         for m in MUSCLES
+    #     ])
+
+    #     target_len_array = init_len.copy()
+
+    # x0 = np.concatenate([
+    #     kp_array,
+    #     kd_array,
+    #     target_len_array,
+    # ])
 
     print("[main_standing]")
     print("model =", MODEL_INFO.name)
@@ -175,8 +195,8 @@ def main():
     print("expected_param_dim =", controller.get_expected_param_dim())
 
     print("x0 shape =", x0.shape)
-    print("Kp =", kp_array)
-    print("Kd =", kd_array)
+    # print("Kp =", kp_array)
+    # print("Kd =", kd_array)
 
     initial_state_dir = result_dir / "initial_state"
 

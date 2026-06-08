@@ -5,6 +5,11 @@ import numpy as np
 from pathlib import Path
 from datetime import datetime
 
+import csv
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
 from mujoco import MjModel, MjData, mj_forward
 
 from model.model_1018 import create_model_info
@@ -33,8 +38,8 @@ MUSCLES = MODEL_INFO.muscle_names
 
 SIM_STEPS = 1000
 
-DEBUG_KP = 20.0
-DEBUG_KD = 2.0
+DEBUG_KP = 100
+DEBUG_KD = 2
 
 # target_length = initial_length * TARGET_SCALE
 # 1.0なら初期筋長をそのまま目標筋長にする
@@ -120,6 +125,125 @@ def get_joint_qpos_dim(model, joint_id):
     # slide / hinge joint
     return 1
 
+def plot_muscle_length_activation(
+    muscles_csv_path,
+    save_dir,
+    muscle_names,
+    target_length,
+):
+    """
+    各筋について，
+    実際の筋長・target_length・activationを1枚のグラフに保存する。
+    """
+
+    save_dir.mkdir(parents=True, exist_ok=True)
+
+    with open(muscles_csv_path, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        rows = list(reader)
+
+    if len(rows) == 0:
+        print("[debug plot] muscles.csv is empty.")
+        return
+
+    time = np.array([
+        float(row["time"])
+        for row in rows
+    ])
+
+    for muscle_index, muscle in enumerate(muscle_names):
+
+        length_key = f"{muscle}.tendon_length"
+        activation_key = f"{muscle}.activation"
+
+        if length_key not in rows[0]:
+            print(f"[debug plot] skipped {muscle}: {length_key} not found")
+            continue
+
+        if activation_key not in rows[0]:
+            print(f"[debug plot] skipped {muscle}: {activation_key} not found")
+            continue
+
+        muscle_length = np.array([
+            float(row[length_key])
+            for row in rows
+        ])
+
+        activation = np.array([
+            float(row[activation_key])
+            for row in rows
+        ])
+
+        target = float(target_length[muscle_index])
+
+        fig, ax1 = plt.subplots(figsize=(10, 5))
+
+        ax1.plot(
+            time,
+            muscle_length,
+            color="tab:blue",
+            linewidth=2,
+            label="tendon_length",
+        )
+
+        ax1.axhline(
+            target,
+            color="tab:red",
+            linestyle="--",
+            linewidth=2,
+            label="target_length",
+        )
+
+        ax1.set_xlabel("Time [s]")
+        ax1.set_ylabel(
+            "Muscle length [m]",
+            color="tab:blue",
+        )
+        ax1.grid(True)
+
+        ax2 = ax1.twinx()
+
+        ax2.plot(
+            time,
+            activation,
+            color="tab:green",
+            linewidth=2,
+            label="activation",
+        )
+
+        ax2.set_ylabel(
+            "Activation",
+            color="tab:green",
+        )
+        ax2.set_ylim(-0.05, 1.05)
+
+        ax2.tick_params(
+            axis="y",
+            colors="tab:green",
+        )
+
+        ax1.tick_params(
+            axis="y",
+            colors="tab:blue",
+        )
+
+        lines1, labels1 = ax1.get_legend_handles_labels()
+        lines2, labels2 = ax2.get_legend_handles_labels()
+
+        ax1.legend(
+            lines1 + lines2,
+            labels1 + labels2,
+            loc="upper right",
+        )
+
+        plt.title(muscle)
+        plt.tight_layout()
+
+        save_path = save_dir / f"{muscle}.png"
+        plt.savefig(save_path)
+        plt.close()
+
+        print(f"[debug plot] wrote {save_path}")
 
 def main():
 
@@ -213,6 +337,19 @@ def main():
     if OUTPUT_CSV:
         csv_dir = result_dir / "csv"
         CSVLogWriter(str(csv_dir)).write_all(sim_log)
+
+    if OUTPUT_CSV:
+        csv_dir = result_dir / "csv"
+        CSVLogWriter(str(csv_dir)).write_all(sim_log)
+
+        plot_dir = result_dir / "plots" / "muscle_length_activation"
+
+        plot_muscle_length_activation(
+            muscles_csv_path=csv_dir / "muscles.csv",
+            save_dir=plot_dir,
+            muscle_names=MUSCLES,
+            target_length=target_length,
+        )
 
     if OUTPUT_VIDEOS:
         video_dir = result_dir / "videos"

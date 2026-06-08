@@ -32,8 +32,16 @@ class CMAESOptimizer(BaseOptimizer):
         maxiter=200,
         n_jobs=None,
         reserve_cores=1,
-        bounds_lower=None,
-        bounds_upper=None,
+        bounds_lower = np.concatenate([
+            np.full(18, 0.0),      # Kp下限
+            np.full(18, 0.0),      # Kd下限
+            # target_lower,          # target_length下限
+        ]),
+        bounds_upper = np.concatenate([
+            np.full(18, 10.0),     # Kp上限
+            np.full(18, 2.0),      # Kd上限
+            # target_upper,          # target_length上限
+        ]),
         checkpoint_interval=500,
         write_checkpoint_video=True,
         write_checkpoint_plots=True,
@@ -108,7 +116,7 @@ class CMAESOptimizer(BaseOptimizer):
             "tolx": 1e-12,
             "tolfunhist": 1e-12,
 
-            "seed": 903252,
+            # "seed": 903252,
 
         }
 

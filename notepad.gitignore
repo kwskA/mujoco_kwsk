@@ -6,6 +6,7 @@ __pycache__/
 # 実行結果
 results/
 test_results/
+debug_results/
 
 # 動画・ログ
 *.mp4
@@ -26,3 +27,4 @@ test_video_render.py
 # 開発環境
 .vscode/
 .idea/
+

@@ -1,0 +1,34 @@
+{
+    "model": "gait1018",
+    "model_path": "model/1018model.xml",
+    "sim_steps": 1000,
+    "controller": "DebugActivationController",
+    "default_activation": 1.0,
+    "activation_values": {
+        "hamstrings_r": 1.0,
+        "bifemsh_r": 1.0,
+        "glut_max_r": 1.0,
+        "iliopsoas_r": 1.0,
+        "rect_fem_r": 1.0,
+        "vasti_r": 1.0,
+        "gastroc_r": 1.0,
+        "soleus_r": 1.0,
+        "tib_ant_r": 1.0,
+        "hamstrings_l": 1.0,
+        "bifemsh_l": 1.0,
+        "glut_max_l": 1.0,
+        "iliopsoas_l": 1.0,
+        "rect_fem_l": 1.0,
+        "vasti_l": 1.0,
+        "gastroc_l": 1.0,
+        "soleus_l": 1.0,
+        "tib_ant_l": 1.0
+    },
+    "num_muscles": 18,
+    "fallen": true,
+    "survived_steps": 87,
+    "total_cost": 18.240000000000002,
+    "details": {
+        "simulation_time": 18.240000000000002
+    }
+}
