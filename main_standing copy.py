@@ -14,9 +14,8 @@ from control.phases.standing_controller import StandingController
 from simulation.objectives.objective_manager import ObjectiveManager
 from simulation.objectives.time_objective import SimulationTimeObjective
 from simulation.fall_detector import COMHeightFallDetector
-# from simulation.objectives.metabolic_energy_objective import MetabolicEnergyObjective
+from simulation.objectives.metabolic_energy_objective import MetabolicEnergyObjective
 from simulation.objectives.muscle_registry import get_muscle_data_module
-from simulation.objectives.com_path_length_objective import COMPathLengthObjective
 
 from optim.initial_state_writer import InitialStateWriter
 from optim.optimizer_factory import create_optimizer
@@ -53,16 +52,21 @@ def build_controller(model):
 
 
 def build_objective_manager():
+    """
+    立位動作用の評価関数群を作成する。
+    """
+
     return ObjectiveManager([
         SimulationTimeObjective(
             target_steps=1000,
             weight=20.0,
             apply_to="all",
         ),
-        COMPathLengthObjective(
-            weight=1.0,
-            axes=(0, 1, 2),
-            apply_to="all",
+
+        MetabolicEnergyObjective(
+            muscle_names=MUSCLES,
+            muscle_data_module=MUSCLE_DATA_MODULE,
+            weight=0.001,
         ),
     ])
 
@@ -101,7 +105,7 @@ def main():
 
     sigma0 = 0.2
     popsize = 100
-    maxiter = 1000
+    maxiter = 10000
 
     n_jobs = 6
     reserve_cores = 1
@@ -200,7 +204,7 @@ def main():
     print("num_muscles =", len(MUSCLES))
     print("use_symmetric_params =", USE_SYMMETRIC_PARAMS)
     print("param_dim =", x0.size)
-    # print("expected_param_dim =", controller.get_expected_param_dim())
+    print("expected_param_dim =", controller.get_expected_param_dim())
 
     print("x0 shape =", x0.shape)
     # print("Kp =", kp_array)

@@ -106,6 +106,11 @@ class CheckpointManager:
         controller = self.controller_builder(model)
         controller.set_params_from_vector(best_params)
 
+        self._save_optimized_params(
+            checkpoint_dir=checkpoint_dir,
+            controller=controller,
+        )
+
         objective_manager = self.objective_manager_builder()
 
         tendon_ids = None
@@ -164,12 +169,12 @@ class CheckpointManager:
             os.makedirs(video_dir, exist_ok=True)
 
             camera_settings = {
-                "front": {
+                "side": {
                     "azimuth": 90.0,
                     "elevation": -10.0,
                     "distance": 3.0,
                 },
-                "side": {
+                "front": {
                     "azimuth": 0.0,
                     "elevation": -10.0,
                     "distance": 3.0,
@@ -240,6 +245,54 @@ class CheckpointManager:
 
         return qpos_names
 
+    def _save_optimized_params(
+        self,
+        checkpoint_dir,
+        controller,
+    ):
+        """
+        Controllerに展開済みの kp, kd, target_length をJSONとして保存する。
+        use_symmetric_params=True/False の両方に対応。
+        """
+
+        names = self.muscle_names
+
+        control_method = getattr(controller, "control_method", controller)
+
+        kp = np.asarray(control_method.Kp, dtype=float)
+        kd = np.asarray(control_method.Kd, dtype=float)
+        target_length = np.asarray(control_method.target_length, dtype=float)
+
+        if names is None:
+            names = [
+                f"muscle_{i}"
+                for i in range(len(kp))
+            ]
+
+        optimized_params = {}
+
+        for i, muscle_name in enumerate(names):
+            optimized_params[muscle_name] = {
+                "kp": float(kp[i]),
+                "kd": float(kd[i]),
+                "target_length": float(target_length[i]),
+            }
+
+        path = os.path.join(
+            checkpoint_dir,
+            "optimized_params.json",
+        )
+
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(
+                optimized_params,
+                f,
+                indent=4,
+                ensure_ascii=False,
+            )
+
+        print(f"[CheckpointManager] wrote {path}")       
+    
     def _get_joint_qpos_dim(self, model, joint_id):
         """
         joint typeからqpos次元数を返す。

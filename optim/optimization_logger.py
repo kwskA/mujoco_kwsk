@@ -158,7 +158,8 @@ class OptimizationLogger:
         self.save_csv()
         # self.save_json()
         self.plot_cost_history()
-
+        self.plot_detail_cost_history()
+        
     def _collect_detail_keys(self):
         """
         detailsに含まれる評価項目名を集める。
@@ -172,3 +173,66 @@ class OptimizationLogger:
                     keys.append(key)
 
         return keys
+    
+    def plot_detail_cost_history(self, filename="detail_cost_history.png"):
+        """
+        total cost と details に含まれる種類別 cost の推移を保存する。
+        """
+
+        if len(self.records) == 0:
+            print("[OptimizationLogger] no records, skipped detail plot.")
+            return
+
+        detail_keys = self._collect_detail_keys()
+
+        if len(detail_keys) == 0:
+            print("[OptimizationLogger] no detail records, skipped detail plot.")
+            return
+
+        path = os.path.join(self.log_dir, filename)
+
+        generations = [
+            record["generation"]
+            for record in self.records
+        ]
+
+        total_costs = [
+            record["min_cost"]
+            for record in self.records
+        ]
+
+        plt.figure(figsize=(10, 5))
+
+        # total cost
+        plt.plot(
+            generations,
+            total_costs,
+            label="total",
+            linewidth=2,
+        )
+
+        # objective別 cost
+        for key in detail_keys:
+            values = []
+
+            for record in self.records:
+                value = record["details"].get(key, float("nan"))
+                values.append(value)
+
+            plt.plot(
+                generations,
+                values,
+                label=key,
+            )
+
+        plt.xlabel("Generation")
+        plt.ylabel("Cost")
+        plt.title("Cost history by objective")
+        plt.legend()
+        plt.grid(True)
+        plt.tight_layout()
+
+        plt.savefig(path)
+        plt.close()
+
+        # print(f"[OptimizationLogger] wrote {path}")
