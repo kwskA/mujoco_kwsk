@@ -14,7 +14,7 @@ from control.phases.standing_controller import StandingController
 from simulation.objectives.objective_manager import ObjectiveManager
 from simulation.objectives.time_objective import SimulationTimeObjective
 from simulation.fall_detector import COMHeightFallDetector
-# from simulation.objectives.metabolic_energy_objective import MetabolicEnergyObjective
+from simulation.objectives.metabolic_energy_objective import MetabolicEnergyObjective
 from simulation.objectives.muscle_registry import get_muscle_data_module
 from simulation.objectives.com_path_length_objective import COMPathLengthObjective
 
@@ -58,6 +58,11 @@ def build_objective_manager():
             target_steps=1000,
             weight=20.0,
             apply_to="all",
+        ),
+        MetabolicEnergyObjective(
+            muscle_names=MUSCLES,
+            muscle_data_module=MUSCLE_DATA_MODULE,
+            weight=0.001,
         ),
         COMPathLengthObjective(
             weight=1.0,
