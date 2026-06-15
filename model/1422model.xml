@@ -1,0 +1,467 @@
+<mujoco model="template">
+  <!-- This model has been converted from an OpenSim model. Model conversion by MyoConverter https://github.com/MyoHub/myoconverter. This model is licensed under Apache 2.0. -->
+  <compiler angle="radian" autolimits="true"/>
+  <option timestep="0.005"/>
+  <size njmax="1000" nconmax="400" nkey="1" nuser_jnt="1"/>
+  <visual>
+    <scale framelength="0.5" framewidth="0.01"/>
+  </visual>
+  <statistic meansize="0.087682" extent="2" center="0 0 0"/>
+  <default class="main">
+    <joint limited="true" armature="1e-05" damping="0.05"/>
+    <geom margin="0.001" rgba="0.8 0.6 0.4 1"/>
+    <site size="0.001 0.005 0.005"/>
+    <tendon limited="false" width="0.005" rgba="0.95 0.3 0.3 1"/>
+    <default class="muscle">
+      <general ctrllimited="true" ctrlrange="0 1" dyntype="muscle" gaintype="muscle" biastype="muscle" dynprm="0.01 0.04 0 0 0 0 0 0 0 0" gainprm="0.75 1.05 -1 200 0.5 1.6 1.5 1.3 1.2 0" biasprm="0.75 1.05 -1 200 0.5 1.6 1.5 1.3 1.2 0"/>
+    </default>
+    <default class="motor">
+      <general gainprm="5 0 0 0 0 0 0 0 0 0"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="1 1 1" rgb2="0.6 0.8 1" width="256" height="1536"/>
+    <mesh name="pelvis_geom_1_sacrum" file="Geometry\sacrum.stl"/>
+    <mesh name="pelvis_geom_2_pelvis" file="Geometry\pelvis.stl"/>
+    <mesh name="pelvis_geom_3_l_pelvis" file="Geometry\l_pelvis.stl"/>
+
+    <mesh name="femur_r_geom_1_femur" file="Geometry\femur_r.stl"/>
+    <mesh name="tibia_r_geom_1_tibia" file="Geometry\tibia_r.stl"/>
+    <mesh name="tibia_r_geom_2_fibula" file="Geometry\fibula.stl"/>
+    <mesh name="talus_r_geom_1_talus" file="Geometry\talus.stl"/>
+    <mesh name="calcn_r_geom_1_foot" file="Geometry\foot.stl"/>
+    <mesh name="toes_r_geom_1_bofoot" file="Geometry\bofoot.stl"/>
+
+    <mesh name="femur_l_geom_1_l_femur" file="Geometry\femur_l.stl"/>
+    <mesh name="tibia_l_geom_1_l_tibia" file="Geometry\tibia_l.stl"/>
+    <mesh name="tibia_l_geom_2_l_fibula" file="Geometry\l_fibula.stl"/>
+    <mesh name="talus_l_geom_1_l_talus" file="Geometry\l_talus.stl"/>
+    <mesh name="calcn_l_geom_1_l_foot" file="Geometry\l_foot.stl"/>
+    <mesh name="toes_l_geom_1_l_bofoot" file="Geometry\l_bofoot.stl"/>
+
+    <mesh name="torso_geom_1_hat_spine" file="Geometry\hat_spine.stl"/>
+    <mesh name="torso_geom_2_hat_jaw" file="Geometry\hat_jaw.stl"/>
+    <mesh name="torso_geom_3_hat_skull" file="Geometry\hat_skull.stl"/>
+    <mesh name="torso_geom_4_hat_ribs" file="Geometry\hat_ribs.stl"/>
+  </asset>
+  <worldbody>
+    <light pos="0 0 0" dir="0 0 -1" directional="true"/>
+    <body name="ground" quat="0.707035 0.707179 0 0">
+      <geom name="ground-plane" size="10 10 0.125" quat="0.707035 -0.707179 0 0" type="plane" rgba="1 0.7 0.4 1"/>
+    </body>
+    <body name="pelvis" quat="0.707035 0.707179 0 0">
+      <inertial pos="-0.0707 0 0" mass="11.777" diaginertia="0.1028 0.0871 0.0579"/>
+      <joint name="pelvis_tx" pos="0 0 0" axis="1 0 0" limited="false" type="slide" range="-5 5" damping="0"/>
+      <joint name="pelvis_ty" pos="0 0 0" axis="0 1 0" limited="false" type="slide" range="-1 2" damping="0" user="0.94"/>
+      <joint name="pelvis_tz" pos="0 0 0" axis="0 0 1" limited="false" type="slide" range="-3 3" damping="0"/>
+      <joint name="pelvis_tilt" pos="0 0 0" axis="0 0 1" limited="false" range="-1.571 1.571" damping="0"/>
+      <joint name="pelvis_list" pos="0 0 0" axis="1 0 0" limited="false" range="-1.571 1.571" damping="0"/>
+      <joint name="pelvis_rotation" pos="0 0 0" axis="0 1 0" limited="false" range="-1.571 1.571" damping="0"/>
+      <geom name="pelvis_geom_1" type="mesh" rgba="1 1 1 1" mesh="pelvis_geom_1_sacrum"/>
+      <geom name="pelvis_geom_2" type="mesh" rgba="1 1 1 1" mesh="pelvis_geom_2_pelvis"/>
+      <geom name="pelvis_geom_3" type="mesh" rgba="1 1 1 1" mesh="pelvis_geom_3_l_pelvis"/>
+      <camera name="oblique" pos="1.499 -1.969 0.645" xyaxes="0.783 0.622 0.000 0.024 -0.030 0.999"/>
+      <camera name="front" pos="1.995 -0.021 0.730" xyaxes="0.026 1.000 0.000 0.026 -0.001 1.000"/>
+      <camera name="side" pos="0.059 -2.017 0.730" xyaxes="0.998 0.057 -0.000 0.001 -0.026 1.000"/>
+      <camera name="diagonal" pos="0.675 -1.248 2.068" xyaxes="0.872 0.489 0.000 -0.294 0.525 0.799"/>
+      <site name="abd_r_glut_med2_r-P1" pos="-0.0855 0.0445 0.0766"/>
+      <site name="add_r_add_mag1_r-P1" pos="-0.0732 -0.1174 0.0255"/>
+      <site name="hamstrings_r_semimem_r-P1" pos="-0.1192 -0.09747 0.07151"/>
+      <site name="glut_max_r_glut_max2_r-P1" pos="-0.1349 0.0176 0.0563"/>
+      <site name="glut_max_r_glut_max2_r-P2" pos="-0.1376 -0.052 0.0914"/>
+      <site name="iliopsoas_r_psoas_r-P1" pos="-0.0647 0.0887 0.0289"/>
+      <site name="iliopsoas_r_psoas_r-P2" pos="-0.0238 -0.057 0.0759"/>
+      <site name="rect_fem_r_rect_fem_r-P1" pos="-0.0295 -0.0311 0.0968"/>
+      <site name="abd_l_glut_med2_l-P1" pos="-0.0855 0.0445 -0.0766"/>
+      <site name="add_l_add_mag1_l-P1" pos="-0.0732 -0.1174 -0.0255"/>
+      <site name="hamstrings_l_semimem_l-P1" pos="-0.1192 -0.09747 -0.07151"/>
+      <site name="glut_max_l_glut_max2_l-P1" pos="-0.1349 0.0176 -0.0563"/>
+      <site name="glut_max_l_glut_max2_l-P2" pos="-0.1376 -0.052 -0.0914"/>
+      <site name="iliopsoas_l_psoas_l-P1" pos="-0.0647 0.0887 -0.0289"/>
+      <site name="iliopsoas_l_psoas_l-P2" pos="-0.0238 -0.057 -0.0759"/>
+      <site name="rect_fem_l_rect_fem_l-P1" pos="-0.0295 -0.0311 -0.0968"/>
+      <body name="femur_r" pos="-0.0707 -0.0661 0.0835">
+        <inertial pos="0 -0.17 0" quat="0.5 0.5 -0.5 0.5" mass="9.3014" diaginertia="0.1412 0.1339 0.0351"/>
+        <joint name="hip_flexion_r" pos="0 0 0" axis="0 0 1" limited="false" range="-2.094 2.094"/>
+        <joint name="hip_adduction_r" pos="0 0 0" axis="1 0 0" limited="false" range="-2.094 2.094"/>
+        <joint name="hip_rotation_r" pos="0 0 0" axis="0 1 0" limited="false" range="-2.094 2.094"/>
+        <geom name="femur_r_geom_1" type="mesh" rgba="1 1 1 1" mesh="femur_r_geom_1_femur"/>
+        <site name="abd_r_glut_med2_r-P2" pos="-0.0258 -0.0058 0.0527"/>
+        <site name="add_r_add_mag1_r-P2" pos="-0.0045 -0.1211 0.0339"/>
+        <site name="bifemsh_r_bifemsh_r-P1" pos="0.005 -0.2111 0.0234"/>
+        <site name="glut_max_r_glut_max2_r-P3" pos="-0.0426 -0.053 0.0293"/>
+        <site name="glut_max_r_glut_max2_r-P4" pos="-0.0156 -0.1016 0.0419"/>
+        <site name="iliopsoas_r_psoas_r-P4" pos="0.0016 -0.0507 0.0038"/>
+        <site name="iliopsoas_r_psoas_r-P5" pos="-0.0188 -0.0597 0.0104"/>
+        <site name="rect_fem_r_rect_fem_r-P2" pos="0.0334 -0.403 0.0019"/>
+        <site name="vasti_r_vas_int_r-P1" pos="0.029 -0.1924 0.031"/>
+        <site name="vasti_r_vas_int_r-P2" pos="0.0335 -0.2084 0.0285"/>
+        <site name="gastroc_r_med_gas_r-P1" pos="-0.019 -0.3929 -0.0235"/>
+        <body name="tibia_r">
+          <inertial pos="0 -0.1867 0" quat="0.5 0.5 -0.5 0.5" mass="3.7075" diaginertia="0.0511 0.0504 0.0051"/>
+          <joint name="knee_r_translation1" pos="0 0 0" axis="1 0 0" type="slide" range="-0.005574 0.00411" user="-0.00363925"/>
+          <joint name="knee_r_translation2" pos="0 0 0" axis="0 1 0" type="slide" range="-0.4226 -0.3953" user="-0.395713"/>
+          <joint name="knee_angle_r" pos="0 0 0" axis="0 0 1" limited="false" range="-2.094 0.1745"/>
+          <geom name="tibia_r_geom_1" type="mesh" rgba="1 1 1 1" mesh="tibia_r_geom_1_tibia"/>
+          <geom name="tibia_r_geom_2" type="mesh" rgba="1 1 1 1" mesh="tibia_r_geom_2_fibula"/>
+          <site name="hamstrings_r_semimem_r-P3" pos="-0.027 -0.04771 -0.01957"/>
+          <site name="bifemsh_r_bifemsh_r-P2" pos="-0.0301 -0.036 0.02943"/>
+          <site name="bifemsh_r_bifemsh_r-P3" pos="-0.0234 -0.0563 0.0343"/>
+          <site name="soleus_r_soleus_r-P1" pos="-0.0024 -0.1533 0.0071"/>
+          <site name="tib_ant_r_tib_ant_r-P1" pos="0.0179 -0.1624 0.0115"/>
+          <site name="tib_ant_r_tib_ant_r-P2" pos="0.0329 -0.3951 -0.0177"/>
+          <body name="talus_r" pos="0 -0.43 0">
+            <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+            <joint name="ankle_angle_r" pos="0 0 0" axis="0 0 1" limited="false" range="-1.571 1.571"/>
+            <geom name="talus_r_geom_1" type="mesh" rgba="1 1 1 1" mesh="talus_r_geom_1_talus"/>
+            <body name="calcn_r" pos="-0.04877 -0.04195 0.00792">
+              <inertial pos="0.1 0.03 0" quat="0 0.707107 0 0.707107" mass="1.25" diaginertia="0.0041 0.0039 0.0014"/>
+              <geom name="calcn_r_geom_1" type="mesh" rgba="1 1 1 1" mesh="calcn_r_geom_1_foot"/>
+              <site name="gastroc_r_med_gas_r-P3" pos="0 0.031 -0.0053"/>
+              <site name="soleus_r_soleus_r-P2" pos="0 0.031 -0.0053"/>
+              <site name="tib_ant_r_tib_ant_r-P3" pos="0.1166 0.0178 -0.0305"/>
+              <body name="toes_r" pos="0.1788 -0.002 0.00108">
+                <inertial pos="0.0346 0.006 -0.0175" quat="0.707107 0 0 0.707107" mass="0.2166" diaginertia="0.001 0.001 0.001"/>
+                <geom name="toes_r_geom_1" type="mesh" rgba="1 1 1 1" mesh="toes_r_geom_1_bofoot"/>
+              </body>
+            </body>
+          </body>
+          <body name="hamstrings_r_semimem_r-P2" pos="0 0 -0.01957">
+            <joint name="hamstrings_r_semimem_r-P2_x" pos="0 0 0" axis="1 0 0" type="slide" range="-0.0348 -0.027"/>
+            <joint name="hamstrings_r_semimem_r-P2_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.04771 -0.03519"/>
+            <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+            <site name="hamstrings_r_semimem_r-P2" pos="0 0 0"/>
+          </body>
+          <body name="rect_fem_r_rect_fem_r-P3" pos="0 0 0.001399">
+            <joint name="rect_fem_r_rect_fem_r-P3_x" pos="0 0 0" axis="1 0 0" type="slide" range="0.01558 0.0733"/>
+            <joint name="rect_fem_r_rect_fem_r-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.06738 0.02531"/>
+            <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+            <site name="rect_fem_r_rect_fem_r-P3" pos="0 0 0"/>
+          </body>
+          <body name="vasti_r_vas_int_r-P4" pos="0 0 0.001799">
+            <joint name="vasti_r_vas_int_r-P4_x" pos="0 0 0" axis="1 0 0" type="slide" range="0.008273 0.06844"/>
+            <joint name="vasti_r_vas_int_r-P4_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.06857 0.02752"/>
+            <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+            <site name="vasti_r_vas_int_r-P4" pos="0 0 0"/>
+          </body>
+        </body>
+        <body name="vasti_r_vas_int_r-P3" pos="0.0335 0 0">
+          <joint name="vasti_r_vas_int_r-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.403 -0.2084"/>
+          <joint name="vasti_r_vas_int_r-P3_z" pos="0 0 0" axis="0 0 1" type="slide" range="0.0055 0.0285"/>
+          <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+          <site name="vasti_r_vas_int_r-P3" pos="0 0 0"/>
+        </body>
+        <body name="gastroc_r_med_gas_r-P2">
+          <joint name="gastroc_r_med_gas_r-P2_x" pos="0 0 0" axis="1 0 0" type="slide" range="-0.03 -0.019"/>
+          <joint name="gastroc_r_med_gas_r-P2_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.4022 -0.3929"/>
+          <joint name="gastroc_r_med_gas_r-P2_z" pos="0 0 0" axis="0 0 1" type="slide" range="-0.0258 -0.0235"/>
+          <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+          <site name="gastroc_r_med_gas_r-P2" pos="0 0 0"/>
+        </body>
+      </body>
+      <body name="femur_l" pos="-0.0707 -0.0661 -0.0835">
+        <inertial pos="0 -0.17 0" quat="0.5 0.5 -0.5 0.5" mass="9.3014" diaginertia="0.1412 0.1339 0.0351"/>
+        <joint name="hip_flexion_l" pos="0 0 0" axis="0 0 1" limited="false" range="-2.094 2.094"/>
+        <joint name="hip_adduction_l" pos="0 0 0" axis="-1 0 0" limited="false" range="-2.094 2.094"/>
+        <joint name="hip_rotation_l" pos="0 0 0" axis="0 -1 0" limited="false" range="-2.094 2.094"/>
+        <geom name="femur_l_geom_1" type="mesh" rgba="1 1 1 1" mesh="femur_l_geom_1_l_femur"/>
+        <site name="abd_l_glut_med2_l-P2" pos="-0.0258 -0.0058 -0.0527"/>
+        <site name="add_l_add_mag1_l-P2" pos="-0.0045 -0.1211 -0.0339"/>
+        <site name="bifemsh_l_bifemsh_l-P1" pos="0.005 -0.2111 -0.0234"/>
+        <site name="glut_max_l_glut_max2_l-P3" pos="-0.0426 -0.053 -0.0293"/>
+        <site name="glut_max_l_glut_max2_l-P4" pos="-0.0156 -0.1016 -0.0419"/>
+        <site name="iliopsoas_l_psoas_l-P4" pos="0.0016 -0.0507 -0.0038"/>
+        <site name="iliopsoas_l_psoas_l-P5" pos="-0.0188 -0.0597 -0.0104"/>
+        <site name="rect_fem_l_rect_fem_l-P2" pos="0.0334 -0.403 -0.0019"/>
+        <site name="vasti_l_vas_int_l-P1" pos="0.029 -0.1924 -0.031"/>
+        <site name="vasti_l_vas_int_l-P2" pos="0.0335 -0.2084 -0.0285"/>
+        <site name="gastroc_l_med_gas_l-P1" pos="-0.019 -0.3929 0.0235"/>
+        <body name="tibia_l">
+          <inertial pos="0 -0.1867 0" quat="0.5 0.5 -0.5 0.5" mass="3.7075" diaginertia="0.0511 0.0504 0.0051"/>
+          <joint name="knee_l_translation1" pos="0 0 0" axis="1 0 0" type="slide" range="-0.005574 0.00411" user="-0.00363925"/>
+          <joint name="knee_l_translation2" pos="0 0 0" axis="0 1 0" type="slide" range="-0.4226 -0.3953" user="-0.395713"/>
+          <joint name="knee_angle_l" pos="0 0 0" axis="0 0 1" limited="false" range="-2.094 0.1745"/>
+          <geom name="tibia_l_geom_1" type="mesh" rgba="1 1 1 1" mesh="tibia_l_geom_1_l_tibia"/>
+          <geom name="tibia_l_geom_2" type="mesh" rgba="1 1 1 1" mesh="tibia_l_geom_2_l_fibula"/>
+          <site name="hamstrings_l_semimem_l-P3" pos="-0.027 -0.04771 0.01957"/>
+          <site name="bifemsh_l_bifemsh_l-P2" pos="-0.0301 -0.036 -0.02943"/>
+          <site name="bifemsh_l_bifemsh_l-P3" pos="-0.0234 -0.0563 -0.0343"/>
+          <site name="soleus_l_soleus_l-P1" pos="-0.0024 -0.1533 -0.0071"/>
+          <site name="tib_ant_l_tib_ant_l-P1" pos="0.0179 -0.1624 -0.0115"/>
+          <site name="tib_ant_l_tib_ant_l-P2" pos="0.0329 -0.3951 0.0177"/>
+          <body name="talus_l" pos="0 -0.43 0">
+            <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+            <joint name="ankle_angle_l" pos="0 0 0" axis="0 0 1" limited="false" range="-1.047 1.047"/>
+            <geom name="talus_l_geom_1" type="mesh" rgba="1 1 1 1" mesh="talus_l_geom_1_l_talus"/>
+            <body name="calcn_l" pos="-0.04877 -0.04195 -0.00792">
+              <inertial pos="0.1 0.03 0" quat="0 0.707107 0 0.707107" mass="1.25" diaginertia="0.0041 0.0039 0.0014"/>
+              <geom name="calcn_l_geom_1" type="mesh" rgba="1 1 1 1" mesh="calcn_l_geom_1_l_foot"/>
+              <site name="gastroc_l_med_gas_l-P3" pos="0 0.031 0.0053"/>
+              <site name="soleus_l_soleus_l-P2" pos="0 0.031 0.0053"/>
+              <site name="tib_ant_l_tib_ant_l-P3" pos="0.1166 0.0178 0.0305"/>
+              <body name="toes_l" pos="0.1788 -0.002 -0.00108">
+                <inertial pos="0.0346 0.006 0.0175" quat="0.707107 0 0 0.707107" mass="0.2166" diaginertia="0.001 0.001 0.001"/>
+                <geom name="toes_l_geom_1" type="mesh" rgba="1 1 1 1" mesh="toes_l_geom_1_l_bofoot"/>
+              </body>
+            </body>
+          </body>
+          <body name="hamstrings_l_semimem_l-P2" pos="0 0 0.01891">
+            <joint name="hamstrings_l_semimem_l-P2_x" pos="0 0 0" axis="1 0 0" type="slide" range="-0.0348 -0.027"/>
+            <joint name="hamstrings_l_semimem_l-P2_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.04771 -0.03519"/>
+            <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+            <site name="hamstrings_l_semimem_l-P2" pos="0 0 0"/>
+          </body>
+          <body name="rect_fem_l_rect_fem_l-P3" pos="0 0 -0.001401">
+            <joint name="rect_fem_l_rect_fem_l-P3_x" pos="0 0 0" axis="1 0 0" type="slide" range="0.01558 0.0733"/>
+            <joint name="rect_fem_l_rect_fem_l-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.06738 0.02531"/>
+            <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+            <site name="rect_fem_l_rect_fem_l-P3" pos="0 0 0"/>
+          </body>
+          <body name="vasti_l_vas_int_l-P4" pos="0 0 -0.001801">
+            <joint name="vasti_l_vas_int_l-P4_x" pos="0 0 0" axis="1 0 0" type="slide" range="0.008273 0.06844"/>
+            <joint name="vasti_l_vas_int_l-P4_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.06857 0.02752"/>
+            <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+            <site name="vasti_l_vas_int_l-P4" pos="0 0 0"/>
+          </body>
+        </body>
+        <body name="vasti_l_vas_int_l-P3" pos="0.0335 0 0">
+          <joint name="vasti_l_vas_int_l-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.403 -0.2084"/>
+          <joint name="vasti_l_vas_int_l-P3_z" pos="0 0 0" axis="0 0 1" type="slide" range="-0.0285 -0.0055"/>
+          <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+          <site name="vasti_l_vas_int_l-P3" pos="0 0 0"/>
+        </body>
+        <body name="gastroc_l_med_gas_l-P2">
+          <joint name="gastroc_l_med_gas_l-P2_x" pos="0 0 0" axis="1 0 0" type="slide" range="-0.03 -0.019"/>
+          <joint name="gastroc_l_med_gas_l-P2_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.4022 -0.3929"/>
+          <joint name="gastroc_l_med_gas_l-P2_z" pos="0 0 0" axis="0 0 1" type="slide" range="0.0235 0.0258"/>
+          <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+          <site name="gastroc_l_med_gas_l-P2" pos="0 0 0"/>
+        </body>
+      </body>
+      <body name="torso" pos="-0.1007 0.0815 0">
+        <inertial pos="-0.03 0.32 0" quat="0.707107 0.707107 0 0" mass="34.2366" diaginertia="1.4745 1.4314 0.7555"/>
+        <joint name="lumbar_extension" pos="0 0 0" axis="0 0 1" limited="false" range="-1.571 1.571" user="-0.0872665"/>
+        <geom name="torso_geom_1" type="mesh" rgba="1 1 1 1" mesh="torso_geom_1_hat_spine"/>
+        <geom name="torso_geom_2" type="mesh" rgba="1 1 1 1" mesh="torso_geom_2_hat_jaw"/>
+        <geom name="torso_geom_3" type="mesh" rgba="1 1 1 1" mesh="torso_geom_3_hat_skull"/>
+        <geom name="torso_geom_4" type="mesh" rgba="1 1 1 1" mesh="torso_geom_4_hat_ribs"/>
+        <body name="head" pos="0 0.55 0">
+          <inertial pos="0 0 0" mass="0.001" diaginertia="0.001 0.001 0.001"/>
+        </body>
+      </body>
+      <body name="iliopsoas_r_psoas_r-P3">
+        <joint name="iliopsoas_r_psoas_r-P3_x" pos="0 0 0" axis="1 0 0" type="slide" range="-0.0288 -0.0238"/>
+        <joint name="iliopsoas_r_psoas_r-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.0805 -0.057"/>
+        <joint name="iliopsoas_r_psoas_r-P3_z" pos="0 0 0" axis="0 0 1" type="slide" range="0.0759 0.0816"/>
+        <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+        <site name="iliopsoas_r_psoas_r-P3" pos="0 0 0"/>
+      </body>
+      <body name="iliopsoas_l_psoas_l-P3">
+        <joint name="iliopsoas_l_psoas_l-P3_x" pos="0 0 0" axis="1 0 0" type="slide" range="-0.0288 -0.0238"/>
+        <joint name="iliopsoas_l_psoas_l-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.0805 -0.057"/>
+        <joint name="iliopsoas_l_psoas_l-P3_z" pos="0 0 0" axis="0 0 1" type="slide" range="-0.0816 -0.0759"/>
+        <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+        <site name="iliopsoas_l_psoas_l-P3" pos="0 0 0"/>
+      </body>
+    </body>
+  </worldbody>
+  <contact>
+    <pair geom1="ground-plane" geom2="pelvis_geom_1"/>
+    <pair geom1="ground-plane" geom2="pelvis_geom_2"/>
+    <pair geom1="ground-plane" geom2="pelvis_geom_3"/>
+    <pair geom1="ground-plane" geom2="femur_r_geom_1"/>
+    <pair geom1="ground-plane" geom2="tibia_r_geom_1"/>
+    <pair geom1="ground-plane" geom2="tibia_r_geom_2"/>
+    <pair geom1="ground-plane" geom2="talus_r_geom_1"/>
+    <pair geom1="ground-plane" geom2="calcn_r_geom_1"/>
+    <pair geom1="ground-plane" geom2="toes_r_geom_1"/>
+    <pair geom1="ground-plane" geom2="femur_l_geom_1"/>
+    <pair geom1="ground-plane" geom2="tibia_l_geom_1"/>
+    <pair geom1="ground-plane" geom2="tibia_l_geom_2"/>
+    <pair geom1="ground-plane" geom2="talus_l_geom_1"/>
+    <pair geom1="ground-plane" geom2="calcn_l_geom_1"/>
+    <pair geom1="ground-plane" geom2="toes_l_geom_1"/>
+    <pair geom1="ground-plane" geom2="torso_geom_1"/>
+    <pair geom1="ground-plane" geom2="torso_geom_2"/>
+    <pair geom1="ground-plane" geom2="torso_geom_3"/>
+    <pair geom1="ground-plane" geom2="torso_geom_4"/>
+  </contact>
+  <equality>
+    <joint name="hip_rotation_r_locked" joint1="hip_rotation_r" polycoef="0 0 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="knee_r_translation1" joint2="knee_angle_r" polycoef="-0.003639 -0.006267 0.002807 0.00134 -0.0006776" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="knee_r_translation2" joint2="knee_angle_r" polycoef="-0.3957 0.003413 -0.005587 0.0006697 0.0005674" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint name="hip_rotation_l_locked" joint1="hip_rotation_l" polycoef="0 0 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="knee_l_translation1" joint2="knee_angle_l" polycoef="-0.003639 -0.006267 0.002807 0.00134 -0.0006776" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="knee_l_translation2" joint2="knee_angle_l" polycoef="-0.3957 0.003413 -0.005587 0.0006697 0.0005674" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint name="lumbar_extension_locked" joint1="lumbar_extension" polycoef="-0.0872665 0 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="hamstrings_r_semimem_r-P2_x" joint2="knee_angle_r" polycoef="-0.0342 -0.003438 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="hamstrings_r_semimem_r-P2_y" joint2="knee_angle_r" polycoef="-0.03615 0.005519 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="iliopsoas_r_psoas_r-P3_x" joint2="hip_flexion_r" polycoef="-0.0288 0 0.00114 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="iliopsoas_r_psoas_r-P3_y" joint2="hip_flexion_r" polycoef="-0.0805 0 0.005359 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="iliopsoas_r_psoas_r-P3_z" joint2="hip_flexion_r" polycoef="0.0816 0 -0.0013 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="rect_fem_r_rect_fem_r-P3_x" joint2="knee_angle_r" polycoef="0.06259 0.04199 0.01152 -0.007248 -0.004008" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="rect_fem_r_rect_fem_r-P3_y" joint2="knee_angle_r" polycoef="0.02032 -0.01159 -0.008624 -0.002308 -0.0002292" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="vasti_r_vas_int_r-P3_y" joint2="knee_angle_r" polycoef="-0.2234 0.08578 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="vasti_r_vas_int_r-P3_z" joint2="knee_angle_r" polycoef="0.02673 0.01014 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="vasti_r_vas_int_r-P4_x" joint2="knee_angle_r" polycoef="0.05647 0.04555 0.01393 -0.007247 -0.004235" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="vasti_r_vas_int_r-P4_y" joint2="knee_angle_r" polycoef="0.02476 -0.006322 -0.00661 -0.003684 -0.0008973" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="gastroc_r_med_gas_r-P2_x" joint2="knee_angle_r" polycoef="-0.02915 -0.004849 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="gastroc_r_med_gas_r-P2_y" joint2="knee_angle_r" polycoef="-0.4015 -0.0041 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="gastroc_r_med_gas_r-P2_z" joint2="knee_angle_r" polycoef="-0.02562 -0.001014 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="hamstrings_l_semimem_l-P2_x" joint2="knee_angle_l" polycoef="-0.0342 -0.003438 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="hamstrings_l_semimem_l-P2_y" joint2="knee_angle_l" polycoef="-0.03615 0.005519 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="iliopsoas_l_psoas_l-P3_x" joint2="hip_flexion_l" polycoef="-0.0288 0 0.00114 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="iliopsoas_l_psoas_l-P3_y" joint2="hip_flexion_l" polycoef="-0.0805 0 0.005359 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="iliopsoas_l_psoas_l-P3_z" joint2="hip_flexion_l" polycoef="-0.0816 0 0.0013 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="rect_fem_l_rect_fem_l-P3_x" joint2="knee_angle_l" polycoef="0.06259 0.04199 0.01152 -0.007248 -0.004008" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="rect_fem_l_rect_fem_l-P3_y" joint2="knee_angle_l" polycoef="0.02032 -0.01159 -0.008624 -0.002308 -0.0002292" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="vasti_l_vas_int_l-P3_y" joint2="knee_angle_l" polycoef="-0.2234 0.08578 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="vasti_l_vas_int_l-P3_z" joint2="knee_angle_l" polycoef="-0.02673 -0.01014 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="vasti_l_vas_int_l-P4_x" joint2="knee_angle_l" polycoef="0.05647 0.04555 0.01393 -0.007247 -0.004235" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="vasti_l_vas_int_l-P4_y" joint2="knee_angle_l" polycoef="0.02476 -0.006322 -0.00661 -0.003684 -0.0008973" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="gastroc_l_med_gas_l-P2_x" joint2="knee_angle_l" polycoef="-0.02915 -0.004849 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="gastroc_l_med_gas_l-P2_y" joint2="knee_angle_l" polycoef="-0.4015 -0.0041 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint joint1="gastroc_l_med_gas_l-P2_z" joint2="knee_angle_l" polycoef="0.02562 0.001014 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
+  </equality>
+  <tendon>
+    <spatial name="abd_r_tendon">
+      <site site="abd_r_glut_med2_r-P1"/>
+      <site site="abd_r_glut_med2_r-P2"/>
+    </spatial>
+    <spatial name="add_r_tendon">
+      <site site="add_r_add_mag1_r-P1"/>
+      <site site="add_r_add_mag1_r-P2"/>
+    </spatial>
+    <spatial name="hamstrings_r_tendon">
+      <site site="hamstrings_r_semimem_r-P1"/>
+      <site site="hamstrings_r_semimem_r-P2"/>
+      <site site="hamstrings_r_semimem_r-P3"/>
+    </spatial>
+    <spatial name="bifemsh_r_tendon">
+      <site site="bifemsh_r_bifemsh_r-P1"/>
+      <site site="bifemsh_r_bifemsh_r-P2"/>
+      <site site="bifemsh_r_bifemsh_r-P3"/>
+    </spatial>
+    <spatial name="glut_max_r_tendon">
+      <site site="glut_max_r_glut_max2_r-P1"/>
+      <site site="glut_max_r_glut_max2_r-P2"/>
+      <site site="glut_max_r_glut_max2_r-P3"/>
+      <site site="glut_max_r_glut_max2_r-P4"/>
+    </spatial>
+    <spatial name="iliopsoas_r_tendon">
+      <site site="iliopsoas_r_psoas_r-P1"/>
+      <site site="iliopsoas_r_psoas_r-P2"/>
+      <site site="iliopsoas_r_psoas_r-P3"/>
+      <site site="iliopsoas_r_psoas_r-P4"/>
+      <site site="iliopsoas_r_psoas_r-P5"/>
+    </spatial>
+    <spatial name="rect_fem_r_tendon">
+      <site site="rect_fem_r_rect_fem_r-P1"/>
+      <site site="rect_fem_r_rect_fem_r-P2"/>
+      <site site="rect_fem_r_rect_fem_r-P3"/>
+    </spatial>
+    <spatial name="vasti_r_tendon">
+      <site site="vasti_r_vas_int_r-P1"/>
+      <site site="vasti_r_vas_int_r-P2"/>
+      <site site="vasti_r_vas_int_r-P3"/>
+      <site site="vasti_r_vas_int_r-P4"/>
+    </spatial>
+    <spatial name="gastroc_r_tendon">
+      <site site="gastroc_r_med_gas_r-P1"/>
+      <site site="gastroc_r_med_gas_r-P2"/>
+      <site site="gastroc_r_med_gas_r-P3"/>
+    </spatial>
+    <spatial name="soleus_r_tendon">
+      <site site="soleus_r_soleus_r-P1"/>
+      <site site="soleus_r_soleus_r-P2"/>
+    </spatial>
+    <spatial name="tib_ant_r_tendon">
+      <site site="tib_ant_r_tib_ant_r-P1"/>
+      <site site="tib_ant_r_tib_ant_r-P2"/>
+      <site site="tib_ant_r_tib_ant_r-P3"/>
+    </spatial>
+    <spatial name="abd_l_tendon">
+      <site site="abd_l_glut_med2_l-P1"/>
+      <site site="abd_l_glut_med2_l-P2"/>
+    </spatial>
+    <spatial name="add_l_tendon">
+      <site site="add_l_add_mag1_l-P1"/>
+      <site site="add_l_add_mag1_l-P2"/>
+    </spatial>
+    <spatial name="hamstrings_l_tendon">
+      <site site="hamstrings_l_semimem_l-P1"/>
+      <site site="hamstrings_l_semimem_l-P2"/>
+      <site site="hamstrings_l_semimem_l-P3"/>
+    </spatial>
+    <spatial name="bifemsh_l_tendon">
+      <site site="bifemsh_l_bifemsh_l-P1"/>
+      <site site="bifemsh_l_bifemsh_l-P2"/>
+      <site site="bifemsh_l_bifemsh_l-P3"/>
+    </spatial>
+    <spatial name="glut_max_l_tendon">
+      <site site="glut_max_l_glut_max2_l-P1"/>
+      <site site="glut_max_l_glut_max2_l-P2"/>
+      <site site="glut_max_l_glut_max2_l-P3"/>
+      <site site="glut_max_l_glut_max2_l-P4"/>
+    </spatial>
+    <spatial name="iliopsoas_l_tendon">
+      <site site="iliopsoas_l_psoas_l-P1"/>
+      <site site="iliopsoas_l_psoas_l-P2"/>
+      <site site="iliopsoas_l_psoas_l-P3"/>
+      <site site="iliopsoas_l_psoas_l-P4"/>
+      <site site="iliopsoas_l_psoas_l-P5"/>
+    </spatial>
+    <spatial name="rect_fem_l_tendon">
+      <site site="rect_fem_l_rect_fem_l-P1"/>
+      <site site="rect_fem_l_rect_fem_l-P2"/>
+      <site site="rect_fem_l_rect_fem_l-P3"/>
+    </spatial>
+    <spatial name="vasti_l_tendon">
+      <site site="vasti_l_vas_int_l-P1"/>
+      <site site="vasti_l_vas_int_l-P2"/>
+      <site site="vasti_l_vas_int_l-P3"/>
+      <site site="vasti_l_vas_int_l-P4"/>
+    </spatial>
+    <spatial name="gastroc_l_tendon">
+      <site site="gastroc_l_med_gas_l-P1"/>
+      <site site="gastroc_l_med_gas_l-P2"/>
+      <site site="gastroc_l_med_gas_l-P3"/>
+    </spatial>
+    <spatial name="soleus_l_tendon">
+      <site site="soleus_l_soleus_l-P1"/>
+      <site site="soleus_l_soleus_l-P2"/>
+    </spatial>
+    <spatial name="tib_ant_l_tendon">
+      <site site="tib_ant_l_tib_ant_l-P1"/>
+      <site site="tib_ant_l_tib_ant_l-P2"/>
+      <site site="tib_ant_l_tib_ant_l-P3"/>
+    </spatial>
+  </tendon>
+  <actuator>
+    <general name="abd_r" class="muscle" tendon="abd_r_tendon" lengthrange="0.0642376 0.170523" gainprm="0.300899 1.12263 4304.64 1 0 2 10 2.5774 1.4 0" biasprm="0.300899 1.12263 4304.64 1 0 2 10 2.5774 1.4 0"/>
+    <general name="add_r" class="muscle" tendon="add_r_tendon" lengthrange="0.0554972 0.203072" gainprm="0.190417 1.32597 3650.15 1 0 2 10 3.56419 1.4 0" biasprm="0.190417 1.32597 3650.15 1 0 2 10 3.56419 1.4 0"/>
+    <general name="hamstrings_r" class="muscle" tendon="hamstrings_r_tendon" lengthrange="0.32889 0.50583" gainprm="0.0794727 1.53812 3547.72 1 0 2 10 3.00847 1.4 0" biasprm="0.0794727 1.53812 3547.72 1 0 2 10 3.00847 1.4 0"/>
+    <general name="bifemsh_r" class="muscle" tendon="bifemsh_r_tendon" lengthrange="0.191264 0.249268" gainprm="0.675355 1.5404 504.584 1 0 2 10 0.981045 1.4 0" biasprm="0.675355 1.5404 504.584 1 0 2 10 0.981045 1.4 0"/>
+    <general name="glut_max_r" class="muscle" tendon="glut_max_r_tendon" lengthrange="0.158435 0.277628" gainprm="0.713518 1.34802 3259.98 1 0 2 10 0.633014 1.4 0" biasprm="0.713518 1.34802 3259.98 1 0 2 10 0.633014 1.4 0"/>
+    <general name="iliopsoas_r" class="muscle" tendon="iliopsoas_r_tendon" lengthrange="0.206181 0.289785" gainprm="0.651722 1.12449 2531.45 1 0 2 10 1.95274 1.4 0" biasprm="0.651722 1.12449 2531.45 1 0 2 10 1.95274 1.4 0"/>
+    <general name="rect_fem_r" class="muscle" tendon="rect_fem_r_tendon" lengthrange="0.402383 0.503881" gainprm="0.364337 1.55233 1327.81 1 0 2 10 0.997502 1.4 0" biasprm="0.364337 1.55233 1327.81 1 0 2 10 0.997502 1.4 0"/>
+    <general name="vasti_r" class="muscle" tendon="vasti_r_tendon" lengthrange="0.173169 0.25581" gainprm="0.690016 1.57608 9473.54 1 0 2 10 0.31752 1.4 0" biasprm="0.690016 1.57608 9473.54 1 0 2 10 0.31752 1.4 0"/>
+    <general name="gastroc_r" class="muscle" tendon="gastroc_r_tendon" lengthrange="0.354064 0.493215" gainprm="0.0151453 1.1373 3836.52 1 0 2 10 4.50602 1.4 0" biasprm="0.0151453 1.1373 3836.52 1 0 2 10 4.50602 1.4 0"/>
+    <general name="soleus_r" class="muscle" tendon="soleus_r_tendon" lengthrange="0.228134 0.326673" gainprm="0.0818408 1.06083 6675.41 1 0 2 10 2.31727 1.4 0" biasprm="0.0818408 1.06083 6675.41 1 0 2 10 2.31727 1.4 0"/>
+    <general name="tib_ant_r" class="muscle" tendon="tib_ant_r_tendon" lengthrange="0.259564 0.352614" gainprm="0.376979 1.15954 2050.78 1 0 2 10 2.986 1.4 0" biasprm="0.376979 1.15954 2050.78 1 0 2 10 2.986 1.4 0"/>
+    <general name="abd_l" class="muscle" tendon="abd_l_tendon" lengthrange="0.0642376 0.170523" gainprm="0.302034 1.18873 4172.08 1 0 2 10 1.62477 1.4 0" biasprm="0.302034 1.18873 4172.08 1 0 2 10 1.62477 1.4 0"/>
+    <general name="add_l" class="muscle" tendon="add_l_tendon" lengthrange="0.0554972 0.203072" gainprm="0.13476 1.55241 3440.67 1 0 2 10 2.00562 1.4 0" biasprm="0.13476 1.55241 3440.67 1 0 2 10 2.00562 1.4 0"/>
+    <general name="hamstrings_l" class="muscle" tendon="hamstrings_l_tendon" lengthrange="0.329457 0.505782" gainprm="0.100606 1.54085 3356.57 1 0 2 10 3.11279 1.4 0" biasprm="0.100606 1.54085 3356.57 1 0 2 10 3.11279 1.4 0"/>
+    <general name="bifemsh_l" class="muscle" tendon="bifemsh_l_tendon" lengthrange="0.191264 0.249268" gainprm="0.686149 1.33144 503.252 1 0 2 10 1.05593 1.4 0" biasprm="0.686149 1.33144 503.252 1 0 2 10 1.05593 1.4 0"/>
+    <general name="glut_max_l" class="muscle" tendon="glut_max_l_tendon" lengthrange="0.158435 0.277628" gainprm="0.697929 1.59405 3279.09 1 0 2 10 0.846838 1.4 0" biasprm="0.697929 1.59405 3279.09 1 0 2 10 0.846838 1.4 0"/>
+    <general name="iliopsoas_l" class="muscle" tendon="iliopsoas_l_tendon" lengthrange="0.206181 0.289785" gainprm="0.626592 1.44122 2569.96 1 0 2 10 0.913614 1.4 0" biasprm="0.626592 1.44122 2569.96 1 0 2 10 0.913614 1.4 0"/>
+    <general name="rect_fem_l" class="muscle" tendon="rect_fem_l_tendon" lengthrange="0.402383 0.503881" gainprm="0.348414 1.57231 1343.37 1 0 2 10 0.938503 1.4 0" biasprm="0.348414 1.57231 1343.37 1 0 2 10 0.938503 1.4 0"/>
+    <general name="vasti_l" class="muscle" tendon="vasti_l_tendon" lengthrange="0.173168 0.25581" gainprm="0.692874 1.63445 9491.74 1 0 2 10 0.415965 1.4 0" biasprm="0.692874 1.63445 9491.74 1 0 2 10 0.415965 1.4 0"/>
+    <general name="gastroc_l" class="muscle" tendon="gastroc_l_tendon" lengthrange="0.366317 0.490849" gainprm="0.0159184 1 4364.98 1 0 2 10 1.95103 1.4 0" biasprm="0.0159184 1 4364.98 1 0 2 10 1.95103 1.4 0"/>
+    <general name="soleus_l" class="muscle" tendon="soleus_l_tendon" lengthrange="0.242035 0.324683" gainprm="0.0626632 1.12322 6968.05 1 0 2 10 1.05275 1.4 0" biasprm="0.0626632 1.12322 6968.05 1 0 2 10 1.05275 1.4 0"/>
+    <general name="tib_ant_l" class="muscle" tendon="tib_ant_l_tendon" lengthrange="0.260365 0.342689" gainprm="0.347552 1.28849 1996.3 1 0 2 10 0.972589 1.4 0" biasprm="0.347552 1.28849 1996.3 1 0 2 10 0.972589 1.4 0"/>
+  </actuator>
+  <keyframe>
+    <key name="default-pose" qpos="0 0.94 0 0 0 0 0 0 0 -0.003639 -0.3957 0 0 -0.0342 -0.03615 0.06259 0.02032 0.05647 0.02476 -0.2234 0.02673 -0.02915 -0.4015 -0.02562 0 0 0 -0.003639 -0.3957 0 0 -0.0342 -0.03615 0.06259 0.02032 0.05647 0.02476 -0.2234 -0.02673 -0.02915 -0.4015 0.02562 -0.08727 -0.0288 -0.0805 0.0816 -0.0288 -0.0805 -0.0816"/>
+  </keyframe>
+</mujoco>
