@@ -32,16 +32,8 @@ class CMAESOptimizer(BaseOptimizer):
         maxiter=200,
         n_jobs=None,
         reserve_cores=1,
-        bounds_lower = np.concatenate([
-            np.full(18, 0.0),      # Kp下限
-            np.full(18, 0.0),      # Kd下限
-            # target_lower,          # target_length下限
-        ]),
-        bounds_upper = np.concatenate([
-            np.full(18, 10.0),     # Kp上限
-            np.full(18, 2.0),      # Kd上限
-            # target_upper,          # target_length上限
-        ]),
+        bounds_lower=None,
+        bounds_upper=None,
         checkpoint_interval=500,
         write_checkpoint_video=True,
         write_checkpoint_plots=True,
@@ -120,11 +112,12 @@ class CMAESOptimizer(BaseOptimizer):
 
         }
 
-        if self.bounds_lower is not None and self.bounds_upper is not None:
-            opts["bounds"] = [
-                np.asarray(self.bounds_lower, dtype=float),
-                np.asarray(self.bounds_upper, dtype=float),
-            ]
+        bounds_lower, bounds_upper = self._prepare_bounds(x0)
+
+        opts["bounds"] = [
+            bounds_lower,
+            bounds_upper,
+        ]
 
         es = CMAEvolutionStrategy(
             x0,
@@ -263,6 +256,66 @@ class CMAESOptimizer(BaseOptimizer):
             return False
 
         return generation % self.checkpoint_interval == 0
+
+    def _make_default_bounds(self, x0):
+        param_dim = x0.size
+
+        if param_dim % 3 != 0:
+            raise ValueError(
+                f"Parameter dimension must be divisible by 3, got {param_dim}"
+            )
+
+        n = param_dim // 3
+
+        bounds_lower = np.concatenate([
+            np.full(n, 0.0),     # Kp
+            np.full(n, 0.0),     # Kd
+            np.full(n, 0.00),    # target_length
+        ])
+
+        bounds_upper = np.concatenate([
+            np.full(n, 10.0),    # Kp
+            np.full(n, 2.0),     # Kd
+            np.full(n, 2.0),     # target_length
+        ])
+
+        return bounds_lower, bounds_upper
+
+    def _prepare_bounds(self, x0):
+        """
+        x0の次元に合わせてCMA-ESのboundsを準備する。
+        明示的なboundsが与えられていない場合は自動生成する。
+        """
+
+        if self.bounds_lower is None or self.bounds_upper is None:
+            bounds_lower, bounds_upper = self._make_default_bounds(x0)
+        else:
+            bounds_lower = np.asarray(self.bounds_lower, dtype=float)
+            bounds_upper = np.asarray(self.bounds_upper, dtype=float)
+
+            if bounds_lower.size != x0.size or bounds_upper.size != x0.size:
+                print("[CMAESOptimizer] bounds size mismatch.")
+                print(f"  x0.size = {x0.size}")
+                print(f"  bounds_lower.size = {bounds_lower.size}")
+                print(f"  bounds_upper.size = {bounds_upper.size}")
+                print("[CMAESOptimizer] Using auto-generated bounds instead.")
+
+                bounds_lower, bounds_upper = self._make_default_bounds(x0)
+
+        if np.any(x0 < bounds_lower) or np.any(x0 > bounds_upper):
+            bad_indices = np.where(
+                (x0 < bounds_lower) | (x0 > bounds_upper)
+            )[0]
+
+            raise ValueError(
+                "Initial solution x0 is outside bounds.\n"
+                f"Bad indices: {bad_indices.tolist()}\n"
+                f"x0[bad]: {x0[bad_indices]}\n"
+                f"lower[bad]: {bounds_lower[bad_indices]}\n"
+                f"upper[bad]: {bounds_upper[bad_indices]}"
+            )
+
+        return bounds_lower, bounds_upper
 
     def _save_checkpoint(
         self,

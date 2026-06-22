@@ -9,12 +9,6 @@ class PDController(BaseController):
     """
     筋長に対するPD制御を行う制御器。
 
-    通常時:
-        筋ごとに Kp, Kd, target_length を1セット持つ。
-
-    歩行時:
-        筋ごと・歩行相ごとに Kp, Kd, target_length を持つ。
-
     use_symmetric_params=True の場合，
     左右筋ペアで同じ Kp, Kd, target_length を使用する。
     """
@@ -25,8 +19,6 @@ class PDController(BaseController):
         muscles,
         use_symmetric_params=False,
         symmetric_muscle_pairs=None,
-        use_gait_states=False,
-        gait_states=None,
     ):
         self.model = model
         self.muscles = list(muscles)
@@ -35,25 +27,6 @@ class PDController(BaseController):
 
         self.use_symmetric_params = bool(use_symmetric_params)
         self.symmetric_muscle_pairs = symmetric_muscle_pairs or []
-
-        self.use_gait_states = bool(use_gait_states)
-
-        if gait_states is None:
-            gait_states = [
-                "EarlyStance",
-                "LateStance",
-                "Liftoff",
-                "Swing",
-                "Landing",
-            ]
-
-        self.gait_states = list(gait_states)
-        self.num_gait_states = len(self.gait_states)
-
-        self.state_to_index = {
-            state: i
-            for i, state in enumerate(self.gait_states)
-        }
 
         self.actuator_ids = np.array([
             self.model.actuator(m).id
@@ -72,6 +45,16 @@ class PDController(BaseController):
         self._build_symmetric_mapping()
 
     def _build_symmetric_mapping(self):
+        """
+        対称最適化用の対応関係を作成する。
+
+        symmetric_param_names:
+            CMA-ESが直接最適化する代表筋名
+
+        symmetric_to_full_indices:
+            各筋が代表筋の何番目に対応するか
+        """
+
         self.symmetric_param_names = list(self.muscles)
         self.symmetric_to_full_indices = np.arange(
             self.num_muscles,
@@ -133,6 +116,10 @@ class PDController(BaseController):
         ], dtype=int)
 
     def _expand_symmetric_values(self, values):
+        """
+        対称用の代表筋パラメータを全筋分へ展開する。
+        """
+
         values = np.asarray(values, dtype=float)
 
         if not self.use_symmetric_params:
@@ -141,6 +128,10 @@ class PDController(BaseController):
         return values[self.symmetric_to_full_indices]
 
     def _reduce_to_symmetric_values(self, values):
+        """
+        全筋分の初期値から代表筋分だけ取り出す。
+        """
+
         values = np.asarray(values, dtype=float)
 
         if not self.use_symmetric_params:
@@ -159,51 +150,20 @@ class PDController(BaseController):
         return values[representative_indices]
 
     def set_params_from_vector(self, x):
+        """
+        最適化ベクトルを Kp, Kd, target_length へ変換する。
+
+        非対称:
+            x = [Kp全筋, Kd全筋, target全筋]
+
+        対称:
+            x = [Kp代表筋, Kd代表筋, target代表筋]
+            その後，全筋分へ展開する。
+        """
+
         x = np.asarray(x, dtype=float)
 
         n = self.get_effective_num_muscles()
-
-        if self.use_gait_states:
-            expected_dim = 3 * n * self.num_gait_states
-
-            if x.size != expected_dim:
-                raise ValueError(
-                    f"Invalid parameter size: got {x.size}, "
-                    f"expected {expected_dim}"
-                )
-
-            block = n * self.num_gait_states
-
-            Kp_base = x[:block].reshape(
-                self.num_gait_states,
-                n,
-            )
-            Kd_base = x[block:2 * block].reshape(
-                self.num_gait_states,
-                n,
-            )
-            target_base = x[2 * block:3 * block].reshape(
-                self.num_gait_states,
-                n,
-            )
-
-            self.Kp = np.vstack([
-                self._expand_symmetric_values(Kp_base[state_index])
-                for state_index in range(self.num_gait_states)
-            ])
-
-            self.Kd = np.vstack([
-                self._expand_symmetric_values(Kd_base[state_index])
-                for state_index in range(self.num_gait_states)
-            ])
-
-            self.target_length = np.vstack([
-                self._expand_symmetric_values(target_base[state_index])
-                for state_index in range(self.num_gait_states)
-            ])
-
-            return
-
         expected_dim = 3 * n
 
         if x.size != expected_dim:
@@ -213,27 +173,18 @@ class PDController(BaseController):
             )
 
         Kp_base = x[:n]
-        Kd_base = x[n:2 * n]
-        target_base = x[2 * n:3 * n]
+        Kd_base = x[n:2*n]
+        target_base = x[2*n:3*n]
 
         self.Kp = self._expand_symmetric_values(Kp_base)
         self.Kd = self._expand_symmetric_values(Kd_base)
         self.target_length = self._expand_symmetric_values(target_base)
 
-    def _get_state_index_for_muscle(self, muscle_name, state_r, state_l):
-        if muscle_name.endswith("_r"):
-            state = state_r
-        elif muscle_name.endswith("_l"):
-            state = state_l
-        else:
-            state = state_r
-
-        if state not in self.state_to_index:
-            return 0
-
-        return self.state_to_index[state]
-
     def compute_ctrl(self, data, state_r=None, state_l=None):
+        """
+        筋長と筋速度から制御入力を計算する。
+        """
+
         if self.Kp is None or self.Kd is None or self.target_length is None:
             raise RuntimeError(
                 "PDController parameters are not set. "
@@ -252,41 +203,11 @@ class PDController(BaseController):
             for tendon_id in self.tendon_ids
         ])
 
-        if self.use_gait_states:
-            if state_r is None or state_l is None:
-                raise ValueError(
-                    "state_r and state_l are required "
-                    "when use_gait_states=True."
-                )
-
-            Kp = np.zeros(self.num_muscles)
-            Kd = np.zeros(self.num_muscles)
-            target_length = np.zeros(self.num_muscles)
-
-            for muscle_index, muscle_name in enumerate(self.muscles):
-                state_index = self._get_state_index_for_muscle(
-                    muscle_name,
-                    state_r,
-                    state_l,
-                )
-
-                Kp[muscle_index] = self.Kp[state_index, muscle_index]
-                Kd[muscle_index] = self.Kd[state_index, muscle_index]
-                target_length[muscle_index] = self.target_length[
-                    state_index,
-                    muscle_index
-                ]
-
-        else:
-            Kp = self.Kp
-            Kd = self.Kd
-            target_length = self.target_length
-
         u = (
-            Kp * (
-                current_length - target_length
+            self.Kp * (
+                current_length - self.target_length
             )
-            + Kd * current_velocity
+            + self.Kd * current_velocity
         )
 
         u = np.clip(u, 0.0, 1.0)
@@ -296,18 +217,25 @@ class PDController(BaseController):
         return ctrl
 
     def get_effective_num_muscles(self):
+        """
+        最適化対象として扱う筋数を返す。
+
+        非対称:
+            実筋数
+
+        対称:
+            左右ペアの代表筋数
+        """
+
         if self.use_symmetric_params:
             return len(self.symmetric_param_names)
 
         return self.num_muscles
 
     def get_expected_param_dim(self):
-        if self.use_gait_states:
-            return (
-                3
-                * self.get_effective_num_muscles()
-                * self.num_gait_states
-            )
+        """
+        必要な最適化パラメータ数を返す。
+        """
 
         return 3 * self.get_effective_num_muscles()
 
@@ -317,6 +245,16 @@ class PDController(BaseController):
         init_Kd=2.0,
         init_target_length=None,
     ):
+        """
+        初期パラメータを生成する。
+
+        非対称:
+            全筋分の初期値を返す
+
+        対称:
+            代表筋分のみの初期値を返す
+        """
+
         if init_target_length is None:
             raise ValueError(
                 "init_target_length is required"
@@ -340,34 +278,15 @@ class PDController(BaseController):
             target_base = self._reduce_to_symmetric_values(
                 init_target_length
             )
-        else:
-            n = self.num_muscles
-            target_base = init_target_length
-
-        if self.use_gait_states:
-            Kp_all = np.full(
-                self.num_gait_states * n,
-                init_Kp,
-            )
-
-            Kd_all = np.full(
-                self.num_gait_states * n,
-                init_Kd,
-            )
-
-            target_all = np.tile(
-                target_base,
-                self.num_gait_states,
-            )
 
             return np.concatenate([
-                Kp_all,
-                Kd_all,
-                target_all,
+                np.full(n, init_Kp),
+                np.full(n, init_Kd),
+                target_base,
             ])
 
         return np.concatenate([
-            np.full(n, init_Kp),
-            np.full(n, init_Kd),
-            target_base,
+            np.full(self.num_muscles, init_Kp),
+            np.full(self.num_muscles, init_Kd),
+            init_target_length,
         ])

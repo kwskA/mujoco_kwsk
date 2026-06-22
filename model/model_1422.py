@@ -51,7 +51,7 @@ def create_model_info():
     """
 
     return ModelInfo(
-        name="gait1422",
+        name="1422",
         model_path="model/1422model.xml",
         muscle_names=GAIT1422_MUSCLES,
         symmetric_muscle_pairs=GAIT1422_SYMMETRIC_MUSCLE_PAIRS,

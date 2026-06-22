@@ -105,7 +105,7 @@ def main():
     sim_steps = 1000
 
     sigma0 = 0.2
-    popsize = 50
+    popsize = 10
     maxiter = 1000
 
     n_jobs = 6

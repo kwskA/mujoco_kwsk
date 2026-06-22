@@ -252,7 +252,7 @@ class CheckpointManager:
     ):
         """
         Controllerに展開済みの kp, kd, target_length をJSONとして保存する。
-        use_symmetric_params=True/False の両方に対応。
+        立位用の1次元配列と，歩行用の2次元配列の両方に対応。
         """
 
         names = self.muscle_names
@@ -261,22 +261,65 @@ class CheckpointManager:
 
         kp = np.asarray(control_method.Kp, dtype=float)
         kd = np.asarray(control_method.Kd, dtype=float)
-        target_length = np.asarray(control_method.target_length, dtype=float)
+        target_length = np.asarray(
+            control_method.target_length,
+            dtype=float,
+        )
 
         if names is None:
+            if kp.ndim == 1:
+                num_muscles = kp.shape[0]
+            elif kp.ndim == 2:
+                num_muscles = kp.shape[1]
+            else:
+                raise ValueError(
+                    f"Unsupported kp dimension: {kp.ndim}"
+                )
+
             names = [
                 f"muscle_{i}"
-                for i in range(len(kp))
+                for i in range(num_muscles)
             ]
 
         optimized_params = {}
 
-        for i, muscle_name in enumerate(names):
-            optimized_params[muscle_name] = {
-                "kp": float(kp[i]),
-                "kd": float(kd[i]),
-                "target_length": float(target_length[i]),
-            }
+        if kp.ndim == 1:
+            for i, muscle_name in enumerate(names):
+                optimized_params[muscle_name] = {
+                    "kp": float(kp[i]),
+                    "kd": float(kd[i]),
+                    "target_length": float(target_length[i]),
+                }
+
+        elif kp.ndim == 2:
+            gait_states = getattr(
+                control_method,
+                "gait_states",
+                [
+                    "EarlyStance",
+                    "LateStance",
+                    "Liftoff",
+                    "Swing",
+                    "Landing",
+                ],
+            )
+
+            for state_index, state_name in enumerate(gait_states):
+                optimized_params[state_name] = {}
+
+                for i, muscle_name in enumerate(names):
+                    optimized_params[state_name][muscle_name] = {
+                        "kp": float(kp[state_index, i]),
+                        "kd": float(kd[state_index, i]),
+                        "target_length": float(
+                            target_length[state_index, i]
+                        ),
+                    }
+
+        else:
+            raise ValueError(
+                f"Unsupported kp dimension: {kp.ndim}"
+            )
 
         path = os.path.join(
             checkpoint_dir,
@@ -291,8 +334,8 @@ class CheckpointManager:
                 ensure_ascii=False,
             )
 
-        print(f"[CheckpointManager] wrote {path}")       
-    
+        print(f"[CheckpointManager] wrote {path}")
+          
     def _get_joint_qpos_dim(self, model, joint_id):
         """
         joint typeからqpos次元数を返す。

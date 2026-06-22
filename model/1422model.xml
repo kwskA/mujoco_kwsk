@@ -129,19 +129,19 @@
           <body name="hamstrings_r_semimem_r-P2" pos="0 0 -0.01957">
             <joint name="hamstrings_r_semimem_r-P2_x" pos="0 0 0" axis="1 0 0" type="slide" range="-0.0348 -0.027"/>
             <joint name="hamstrings_r_semimem_r-P2_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.04771 -0.03519"/>
-            <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+            <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
             <site name="hamstrings_r_semimem_r-P2" pos="0 0 0"/>
           </body>
           <body name="rect_fem_r_rect_fem_r-P3" pos="0 0 0.001399">
             <joint name="rect_fem_r_rect_fem_r-P3_x" pos="0 0 0" axis="1 0 0" type="slide" range="0.01558 0.0733"/>
             <joint name="rect_fem_r_rect_fem_r-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.06738 0.02531"/>
-            <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+            <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
             <site name="rect_fem_r_rect_fem_r-P3" pos="0 0 0"/>
           </body>
           <body name="vasti_r_vas_int_r-P4" pos="0 0 0.001799">
             <joint name="vasti_r_vas_int_r-P4_x" pos="0 0 0" axis="1 0 0" type="slide" range="0.008273 0.06844"/>
             <joint name="vasti_r_vas_int_r-P4_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.06857 0.02752"/>
-            <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+            <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
             <site name="vasti_r_vas_int_r-P4" pos="0 0 0"/>
           </body>
         </body>
@@ -155,7 +155,7 @@
           <joint name="gastroc_r_med_gas_r-P2_x" pos="0 0 0" axis="1 0 0" type="slide" range="-0.03 -0.019"/>
           <joint name="gastroc_r_med_gas_r-P2_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.4022 -0.3929"/>
           <joint name="gastroc_r_med_gas_r-P2_z" pos="0 0 0" axis="0 0 1" type="slide" range="-0.0258 -0.0235"/>
-          <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+          <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
           <site name="gastroc_r_med_gas_r-P2" pos="0 0 0"/>
         </body>
       </body>
@@ -208,33 +208,33 @@
           <body name="hamstrings_l_semimem_l-P2" pos="0 0 0.01891">
             <joint name="hamstrings_l_semimem_l-P2_x" pos="0 0 0" axis="1 0 0" type="slide" range="-0.0348 -0.027"/>
             <joint name="hamstrings_l_semimem_l-P2_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.04771 -0.03519"/>
-            <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+            <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
             <site name="hamstrings_l_semimem_l-P2" pos="0 0 0"/>
           </body>
           <body name="rect_fem_l_rect_fem_l-P3" pos="0 0 -0.001401">
             <joint name="rect_fem_l_rect_fem_l-P3_x" pos="0 0 0" axis="1 0 0" type="slide" range="0.01558 0.0733"/>
             <joint name="rect_fem_l_rect_fem_l-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.06738 0.02531"/>
-            <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+            <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
             <site name="rect_fem_l_rect_fem_l-P3" pos="0 0 0"/>
           </body>
           <body name="vasti_l_vas_int_l-P4" pos="0 0 -0.001801">
             <joint name="vasti_l_vas_int_l-P4_x" pos="0 0 0" axis="1 0 0" type="slide" range="0.008273 0.06844"/>
             <joint name="vasti_l_vas_int_l-P4_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.06857 0.02752"/>
-            <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+            <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
             <site name="vasti_l_vas_int_l-P4" pos="0 0 0"/>
           </body>
         </body>
         <body name="vasti_l_vas_int_l-P3" pos="0.0335 0 0">
           <joint name="vasti_l_vas_int_l-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.403 -0.2084"/>
           <joint name="vasti_l_vas_int_l-P3_z" pos="0 0 0" axis="0 0 1" type="slide" range="-0.0285 -0.0055"/>
-          <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+          <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
           <site name="vasti_l_vas_int_l-P3" pos="0 0 0"/>
         </body>
         <body name="gastroc_l_med_gas_l-P2">
           <joint name="gastroc_l_med_gas_l-P2_x" pos="0 0 0" axis="1 0 0" type="slide" range="-0.03 -0.019"/>
           <joint name="gastroc_l_med_gas_l-P2_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.4022 -0.3929"/>
           <joint name="gastroc_l_med_gas_l-P2_z" pos="0 0 0" axis="0 0 1" type="slide" range="0.0235 0.0258"/>
-          <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+          <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
           <site name="gastroc_l_med_gas_l-P2" pos="0 0 0"/>
         </body>
       </body>
@@ -253,14 +253,14 @@
         <joint name="iliopsoas_r_psoas_r-P3_x" pos="0 0 0" axis="1 0 0" type="slide" range="-0.0288 -0.0238"/>
         <joint name="iliopsoas_r_psoas_r-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.0805 -0.057"/>
         <joint name="iliopsoas_r_psoas_r-P3_z" pos="0 0 0" axis="0 0 1" type="slide" range="0.0759 0.0816"/>
-        <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+        <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
         <site name="iliopsoas_r_psoas_r-P3" pos="0 0 0"/>
       </body>
       <body name="iliopsoas_l_psoas_l-P3">
         <joint name="iliopsoas_l_psoas_l-P3_x" pos="0 0 0" axis="1 0 0" type="slide" range="-0.0288 -0.0238"/>
         <joint name="iliopsoas_l_psoas_l-P3_y" pos="0 0 0" axis="0 1 0" type="slide" range="-0.0805 -0.057"/>
         <joint name="iliopsoas_l_psoas_l-P3_z" pos="0 0 0" axis="0 0 1" type="slide" range="-0.0816 -0.0759"/>
-        <geom size="0.0005" contype="2" conaffinity="2" rgba="0 0 1 0"/>
+        <geom size="0.008" contype="2" conaffinity="2" rgba="0 0 1 0"/>
         <site name="iliopsoas_l_psoas_l-P3" pos="0 0 0"/>
       </body>
     </body>

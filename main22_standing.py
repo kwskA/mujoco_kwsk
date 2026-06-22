@@ -122,7 +122,7 @@ def main():
     result_dir = (
         ROOT_DIR
         / "results"
-        / f"standing_{MODEL_INFO.name}_{timestamp}_{symmetry_tag}"
+        / f"{timestamp}_standing_{MODEL_INFO.name}_{symmetry_tag}"
     )
 
     model = MjModel.from_xml_path(MODEL_INFO.model_path)
