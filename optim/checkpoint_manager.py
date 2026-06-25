@@ -210,6 +210,7 @@ class CheckpointManager:
                     controller=controller,
                     sim_steps=self.sim_steps,
                     initial_qpos=initial_qpos_for_simulation,
+                    initial_qvel=self.initial_qvel,
                     tracking_body_name="pelvis",
                     camera_distance=camera_param["distance"],
                     camera_azimuth=camera_param["azimuth"],

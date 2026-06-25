@@ -1,7 +1,7 @@
 import mujoco
 import mujoco.viewer
 
-model = mujoco.MjModel.from_xml_path( r"model/1422model.xml")
+model = mujoco.MjModel.from_xml_path( r"model/1018model.xml")
 data = mujoco.MjData(model)
 
 # キーフレーム初期化

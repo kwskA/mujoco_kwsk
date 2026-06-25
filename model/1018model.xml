@@ -9,7 +9,7 @@
   <statistic meansize="0.0990739" extent="2" center="0 0 0"/>
   <default class="main">
     <joint limited="true" armature="1e-05" damping="0.05"/>
-    <geom margin="0.001" rgba="0.8 0.6 0.4 1"/>
+    <geom margin="0.001" rgba="1 1 1 1"/>
     <site size="0.001 0.005 0.005"/>
     <tendon limited="false" width="0.005" rgba="0.95 0.3 0.3 1"/>
     <default class="muscle">
@@ -21,6 +21,8 @@
   </default>
   <asset>
     <texture type="skybox" builtin="gradient" rgb1="1 1 1" rgb2="0.6 0.8 1" width="256" height="1536"/>
+    <texture name="ground_tex" type="2d" builtin="checker" rgb1="0.792 0.880 0.792" rgb2="0.720 0.800 0.720" width="512" height="512"/>
+    <material name="ground_mat" texture="ground_tex" texrepeat="20 20" rgba="1 1 1 1" reflectance="0.0" specular="0.0" shininess="0.0"/>
     <mesh name="pelvis_geom_1_sacrum" file="Geometry\sacrum.stl"/>
     <mesh name="pelvis_geom_2_pelvis" file="Geometry\pelvis.stl"/>
     <mesh name="pelvis_geom_3_l_pelvis" file="Geometry\l_pelvis.stl"/>
@@ -50,7 +52,8 @@
     <camera name="side" pos="0.059 -2.017 0.730" xyaxes="0.998 0.057 -0.000 0.001 -0.026 1.000"/>
     <camera name="diagonal" pos="0.675 -1.248 2.068" xyaxes="0.872 0.489 0.000 -0.294 0.525 0.799"/>
     <body name="ground" quat="0.707035 0.707179 0 0">
-      <geom name="ground-plane" size="10 10 0.125" quat="0.707035 -0.707179 0 0" type="plane" rgba="1 0.7 0.4 1"/>
+      <geom name="ground-plane" size="10 10 0.125" quat="0.707035 -0.707179 0 0" type="plane" material="ground_mat"/>
+      <!-- <geom name="ground-plane" size="10 10 0.125" quat="0.707035 -0.707179 0 0" type="plane" rgba="1 0.7 0.4 1"/> -->
     </body>
     <body name="com_marker" mocap="true" pos="0 0 1">
         <geom

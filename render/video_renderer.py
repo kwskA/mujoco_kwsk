@@ -371,6 +371,9 @@ class VideoRenderer:
         data = MjData(self.model)
         self.reset_data(data)
 
+        if hasattr(self.controller, "reset"):
+            self.controller.reset()
+            
         renderer = mujoco.Renderer(
             self.model,
             height=self.height,

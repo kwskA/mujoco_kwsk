@@ -22,6 +22,14 @@ class SequentialController(BaseController):
         if len(self.phases) != len(self.durations):
             raise ValueError("phases and durations must have the same length.")
 
+    def reset(self):
+        """
+        各フェーズの内部状態を初期化する。
+        """
+        for phase in self.phases:
+            if hasattr(phase, "reset"):
+                phase.reset()
+
     def _get_phase_index(self, time):
         """
         現在時刻から使用するフェーズ番号を返す。

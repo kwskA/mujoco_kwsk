@@ -16,6 +16,13 @@ class StandingController(BaseController):
         self.name = name
         self.control_method = control_method
 
+        def reset(self):
+            """
+            内部の制御方法に状態があれば初期化する。
+            """
+            if hasattr(self.control_method, "reset"):
+                self.control_method.reset()
+
     def set_params_from_vector(self, x):
         """
         最適化ベクトルを内部の制御方法に渡す。

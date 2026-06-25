@@ -92,6 +92,25 @@ class GaitStateController:
         total_mass = np.sum(self.model.body_mass[1:])
         self.body_weight = total_mass * abs(self.model.opt.gravity[2])
 
+    def reset(self):
+        """
+        歩行状態を初期化する。
+        """
+
+        for leg in (self.right, self.left):
+            leg.state = GaitState.UNKNOWN
+
+            leg.foot_contact = False
+            leg.toe_contact = False
+            leg.contact = False
+
+            leg.leg_load = 0.0
+
+            leg.allow_stance_transition = False
+            leg.allow_swing_transition = False
+
+            leg.sagittal_pos = 0.0
+
     def _get_body_id(self, body_name):
         body_id = mujoco.mj_name2id(
             self.model,

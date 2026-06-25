@@ -19,6 +19,14 @@ class GaitController(BaseController):
         self.control_method = control_method
         self.gait_state_controller = GaitStateController(model)
 
+    def reset(self):
+        """
+        歩行相判定器の内部状態を初期化する。
+        動画出力などで同じcontrollerを使い回すときに必要。
+        """
+        if hasattr(self.gait_state_controller, "reset"):
+            self.gait_state_controller.reset()
+            
     def set_params_from_vector(self, x):
         """
         最適化ベクトルを内部の制御方法に渡す。
