@@ -62,7 +62,7 @@ def build_objective_manager():
     return ObjectiveManager([
         SimulationTimeObjective(
             target_steps=2000,
-            weight=20.0,
+            weight=1,
             apply_to="all",
         ),
         MetabolicEnergyObjective(
@@ -71,12 +71,15 @@ def build_objective_manager():
             weight=0.001,
         ),
         WalkingSpeedObjective(
-            min_velocity=1.0,
-            weight=10.0,
+            min_velocity=0.2,
+            ideal_velocity=1.0,
+            max_velocity=1.8,
+            weight=1,
             apply_to="all",
             qpos_index=0,
-        ),
-    ])
+        ),],
+        total_cost_mode = "gait",
+    )
 
 
 def build_fall_detector(model):
@@ -103,13 +106,13 @@ def main():
     sim_steps = 2000
 
     sigma0 = 0.2
-    popsize = 100
-    maxiter = 500
+    popsize = 5
+    maxiter = 1000
 
     n_jobs = 6
     reserve_cores = 1
 
-    checkpoint_interval = 200
+    checkpoint_interval = 1000
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     symmetry_tag = "symmetric" if USE_SYMMETRIC_PARAMS else "individual"
@@ -132,6 +135,7 @@ def main():
     )
 
     initial_qpos = data.qpos.copy()
+    initial_qvel = data.qvel.copy()
 
     tendon_ids = np.array([
         model.tendon(f"{m}_tendon").id
@@ -196,6 +200,7 @@ def main():
         result_dir=str(result_dir),
 
         initial_qpos=initial_qpos,
+        initial_qvel=initial_qvel,
         muscle_names=MUSCLES,
 
         sigma0=sigma0,

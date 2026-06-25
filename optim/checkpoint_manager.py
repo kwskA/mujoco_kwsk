@@ -25,6 +25,7 @@ class CheckpointManager:
         objective_manager_builder,
         sim_steps,
         initial_qpos=None,
+        initial_qvel=None,
         muscle_names=None,
     ):
         self.result_dir = result_dir
@@ -33,6 +34,7 @@ class CheckpointManager:
         self.objective_manager_builder = objective_manager_builder
         self.sim_steps = int(sim_steps)
         self.initial_qpos = initial_qpos
+        self.initial_qvel = initial_qvel
         self.muscle_names = muscle_names
 
         os.makedirs(self.result_dir, exist_ok=True)
@@ -87,7 +89,11 @@ class CheckpointManager:
         else:
             data.qpos[:] = model.key_qpos[0].copy()
 
-        data.qvel[:] = 0.0
+        if self.initial_qvel is not None:
+            data.qvel[:] = self.initial_qvel.copy()
+        else:
+            data.qvel[:] = 0.0
+
         data.qacc[:] = 0.0
         data.ctrl[:] = 0.0
 
@@ -138,6 +144,7 @@ class CheckpointManager:
             objective_manager=objective_manager,
             sim_steps=self.sim_steps,
             initial_qpos=initial_qpos_for_simulation,
+            initial_qvel=self.initial_qvel,
             qpos_names=qpos_names,
             qvel_names=qvel_names,
             muscle_names=self.muscle_names,
@@ -215,6 +222,32 @@ class CheckpointManager:
                     actuator_ids=actuator_ids,
                     color_tendons=True,
                 )
+
+                if camera_name == "side":
+
+                    video_path = os.path.join(
+                        video_dir,
+                        f"{tag}_side_fixed.mp4",
+                    )
+
+                    video_renderer = VideoRenderer(
+                        model=model,
+                        controller=controller,
+                        sim_steps=self.sim_steps,
+                        initial_qpos=initial_qpos_for_simulation,
+                        initial_qvel=self.initial_qvel,
+                        tracking_body_name=None,
+                        camera_distance=camera_param["distance"],
+                        camera_azimuth=camera_param["azimuth"],
+                        camera_elevation=camera_param["elevation"],
+                    )
+
+                    video_renderer.render(
+                        save_path=video_path,
+                        tendon_ids=tendon_ids,
+                        actuator_ids=actuator_ids,
+                        color_tendons=True,
+                    )
 
         print(f"[CheckpointManager] saved {checkpoint_dir}")
 

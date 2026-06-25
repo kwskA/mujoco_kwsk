@@ -52,6 +52,7 @@ class VideoRenderer:
         controller,
         sim_steps,
         initial_qpos=None,
+        initial_qvel=None,
         width=400,
         height=400,
         fps=200,
@@ -82,6 +83,7 @@ class VideoRenderer:
         self.controller = controller
         self.sim_steps = int(sim_steps)
         self.initial_qpos = initial_qpos
+        self.initial_qvel = initial_qvel
 
         self.width = int(width)
         self.height = int(height)
@@ -195,7 +197,11 @@ class VideoRenderer:
         else:
             data.qpos[:] = self.model.key_qpos[0].copy()
 
-        data.qvel[:] = 0.0
+        if self.initial_qvel is not None:
+            data.qvel[:] = self.initial_qvel.copy()
+        else:
+            data.qvel[:] = 0.0
+            
         data.qacc[:] = 0.0
         data.ctrl[:] = 0.0
 

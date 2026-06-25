@@ -6,7 +6,7 @@ from datetime import datetime
 
 from mujoco import MjModel, MjData, mj_forward
 
-from model.model_1024 import create_model_info
+from model.model_2354 import create_model_info
 
 from control.control_methods.pd_controller import PDController
 from control.phases.standing_controller import StandingController
@@ -56,21 +56,20 @@ def build_objective_manager():
     return ObjectiveManager([
         SimulationTimeObjective(
             target_steps=1000,
-            weight=20.0,
+            weight=1000.0,
             apply_to="all",
         ),
         MetabolicEnergyObjective(
             muscle_names=MUSCLES,
             muscle_data_module=MUSCLE_DATA_MODULE,
-            weight=0.001,
+            weight=0.01,
         ),
         COMPathLengthObjective(
-            weight=0.0,
+            weight=1.0,
             axes=(0, 1, 2),
             apply_to="all",
-        ),],
-        total_cost_mode = "sum",
-    )
+        ),
+    ])
 
 
 def build_fall_detector(model):
@@ -107,12 +106,12 @@ def main():
 
     sigma0 = 0.2
     popsize = 100
-    maxiter = 50000
+    maxiter = 100
 
     n_jobs = 6
     reserve_cores = 1
 
-    checkpoint_interval = 2000
+    checkpoint_interval = 50
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 

@@ -26,6 +26,7 @@ class CMAESOptimizer(BaseOptimizer):
         sim_steps,
         result_dir,
         initial_qpos=None,
+        initial_qvel=None,
         muscle_names=None,
         sigma0=0.5,
         popsize=25,
@@ -53,6 +54,7 @@ class CMAESOptimizer(BaseOptimizer):
         self.sim_steps = int(sim_steps)
         self.result_dir = result_dir
         self.initial_qpos = initial_qpos
+        self.initial_qvel = initial_qvel
         self.muscle_names = muscle_names
 
         self.sigma0 = float(sigma0)
@@ -91,6 +93,7 @@ class CMAESOptimizer(BaseOptimizer):
             objective_manager_builder=self.objective_manager_builder,
             sim_steps=self.sim_steps,
             initial_qpos=self.initial_qpos,
+            initial_qvel=self.initial_qvel,
             muscle_names=self.muscle_names,
         )
 
@@ -131,13 +134,24 @@ class CMAESOptimizer(BaseOptimizer):
             controller_builder=self.controller_builder,
             objective_manager_builder=self.objective_manager_builder,
             initial_qpos=self.initial_qpos,
+            initial_qvel=self.initial_qvel,
             fall_detector_builder=self.fall_detector_builder,
             n_jobs=self.n_jobs,
             reserve_cores=self.reserve_cores,
         )
 
+        stop_file = os.path.join(
+            self.result_dir,
+            "STOP",
+        )
+
         try:
             while not es.stop():
+                if os.path.exists(stop_file):
+                    print()
+                    print("[CMAESOptimizer] STOP file detected.")
+                    print("[CMAESOptimizer] Finishing optimization.")
+                    break
 
                 solutions = es.ask()
 
@@ -204,22 +218,15 @@ class CMAESOptimizer(BaseOptimizer):
                         tag=f"gen_{generation:04d}",
                     )
 
-        except KeyboardInterrupt:
-            print()
-            print("[CMAESOptimizer] KeyboardInterrupt detected.")
-            print("[CMAESOptimizer] saving current best before exit.")
-
-            if self.best_params is not None:
-                self._save_checkpoint(
-                    generation=int(es.countiter),
-                    tag="interrupted",
-                )
-
         finally:
             pool.close()
             pool.join()
 
             self.optimization_logger.save_all()
+
+            if os.path.exists(stop_file):
+                print("stop_file remove")
+                os.remove(stop_file)
 
         if self.best_params is None:
             self.best_params = np.asarray(
@@ -267,16 +274,20 @@ class CMAESOptimizer(BaseOptimizer):
 
         n = param_dim // 3
 
+        target_init = x0[2 * n : 3 * n]
+
         bounds_lower = np.concatenate([
             np.full(n, 0.0),     # Kp
             np.full(n, 0.0),     # Kd
-            np.full(n, 0.00),    # target_length
+            target_init * 0.8,
+            # np.full(n, 0.00),    # target_length
         ])
 
         bounds_upper = np.concatenate([
             np.full(n, 10.0),    # Kp
             np.full(n, 2.0),     # Kd
-            np.full(n, 2.0),     # target_length
+            target_init * 1.2,
+            # np.full(n, 2.0),     # target_length
         ])
 
         return bounds_lower, bounds_upper

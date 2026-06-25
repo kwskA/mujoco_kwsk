@@ -15,6 +15,7 @@ def _init_worker(
     controller_builder,
     objective_manager_builder,
     initial_qpos=None,
+    initial_qvel=None,
     fall_detector_builder=None,
 ):
     """
@@ -37,6 +38,7 @@ def _init_worker(
     _WORKER["controller"] = controller
     _WORKER["objective_manager"] = objective_manager
     _WORKER["initial_qpos"] = initial_qpos
+    _WORKER["initial_qvel"] = initial_qvel
     _WORKER["fall_detector"] = fall_detector
 
 
@@ -50,6 +52,7 @@ def run_simulation_worker(params):
     controller = _WORKER["controller"]
     objective_manager = _WORKER["objective_manager"]
     initial_qpos = _WORKER["initial_qpos"]
+    initial_qvel = _WORKER["initial_qvel"]
     fall_detector = _WORKER["fall_detector"]
 
     params = np.asarray(params, dtype=float)
@@ -58,12 +61,22 @@ def run_simulation_worker(params):
 
     data = MjData(model)
 
+    if _WORKER["initial_qpos"] is not None:
+        data.qpos[:] = _WORKER["initial_qpos"]
+
+    if _WORKER["initial_qvel"] is not None:
+        data.qvel[:] = _WORKER["initial_qvel"]
+    else:
+        data.qvel[:] = 0.0
+
+
     runner = SimulationRunner(
         model=model,
         controller=controller,
         objective_manager=objective_manager,
         sim_steps=sim_steps,
         initial_qpos=initial_qpos,
+        initial_qvel=initial_qvel,
         fall_detector=fall_detector,
         enable_log=False,
     )

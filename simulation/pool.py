@@ -42,6 +42,7 @@ def create_simulation_pool(
     controller_builder,
     objective_manager_builder,
     initial_qpos=None,
+    initial_qvel=None,
     n_jobs=None,
     reserve_cores=1,
     fall_detector_builder=None,
@@ -73,6 +74,7 @@ def create_simulation_pool(
             controller_builder,
             objective_manager_builder,
             initial_qpos,
+            initial_qvel,
             fall_detector_builder,
         ),
     )

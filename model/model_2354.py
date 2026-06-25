@@ -55,6 +55,14 @@ GAIT2354_MUSCLES = [
     "soleus_l",
     "tib_post_l",
     "tib_ant_l",
+
+    # 体幹6筋
+    "ercspn_r",
+    "ercspn_l",
+    "intobl_r",
+    "intobl_l",
+    "extobl_r",
+    "extobl_l",
 ]
 
 
@@ -91,6 +99,10 @@ GAIT2354_SYMMETRIC_MUSCLE_PAIRS = [
 
     ("tib_post_r", "tib_post_l"),
     ("tib_ant_r", "tib_ant_l"),
+
+    ("ercspn_r", "ercspn_l"),
+    ("intobl_r", "intobl_l"),
+    ("extobl_r", "extobl_l"),
 ]
 
 

@@ -20,6 +20,7 @@ class SimulationRunner:
         objective_manager,
         sim_steps,
         initial_qpos=None,
+        initial_qvel=None,
         fall_detector=None,
         qpos_names=None,
         qvel_names=None,
@@ -38,6 +39,7 @@ class SimulationRunner:
         self.sim_steps = int(sim_steps)
 
         self.initial_qpos = initial_qpos
+        self.initial_qvel = initial_qvel
         self.fall_detector = fall_detector
 
         self.qpos_names = qpos_names
@@ -58,9 +60,17 @@ class SimulationRunner:
         else:
             data.qpos[:] = self.model.key_qpos[0].copy()
 
-        data.qvel[:] = 0.0
+        if self.initial_qvel is not None:
+            data.qvel[:] = self.initial_qvel.copy()
+        else:
+            data.qvel[:] = 0.0
+
         data.qacc[:] = 0.0
         data.ctrl[:] = 0.0
+
+        # jid = self.model.joint("pelvis_tx").id
+        # adr = self.model.jnt_dofadr[jid]
+        # print("[reset_data] pelvis_tx qvel =", data.qvel[adr])
 
         mj_forward(self.model, data)
 
@@ -180,6 +190,10 @@ class SimulationRunner:
             data = MjData(self.model)
 
         self.reset_data(data)
+
+        # print("[before step] time =", data.time)
+        # print("[before step] pelvis_tx =", data.qpos[0])
+        # print("[before step] pelvis_tx qvel =", data.qvel[0])
 
         self.objective_manager.reset()
 
