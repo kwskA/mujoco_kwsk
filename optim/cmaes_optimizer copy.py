@@ -267,50 +267,30 @@ class CMAESOptimizer(BaseOptimizer):
     def _make_default_bounds(self, x0):
         param_dim = x0.size
 
-        if param_dim % 4 == 0:
-            n = param_dim // 4
+        if param_dim % 3 != 0:
+            raise ValueError(
+                f"Parameter dimension must be divisible by 3, got {param_dim}"
+            )
 
-            target_init = x0[3 * n : 4 * n]
+        n = param_dim // 3
 
-            bounds_lower = np.concatenate([
-                np.full(n, 0.0),     # activation_ff
-                np.full(n, 0.0),     # Kp
-                np.full(n, 0.0),     # Kd
-                target_init * 0.8,   # target_length
-            ])
+        target_init = x0[2 * n : 3 * n]
 
-            bounds_upper = np.concatenate([
-                np.full(n, 1.0),     # activation_ff
-                np.full(n, 10.0),    # Kp
-                np.full(n, 2.0),     # Kd
-                target_init * 1.2,   # target_length
-            ])
+        bounds_lower = np.concatenate([
+            np.full(n, 0.0),     # Kp
+            np.full(n, 0.0),     # Kd
+            target_init * 0.8,
+            # np.full(n, 0.00),    # target_length
+        ])
 
-            return bounds_lower, bounds_upper
+        bounds_upper = np.concatenate([
+            np.full(n, 10.0),    # Kp
+            np.full(n, 2.0),     # Kd
+            target_init * 1.2,
+            # np.full(n, 2.0),     # target_length
+        ])
 
-        if param_dim % 3 == 0:
-            n = param_dim // 3
-
-            target_init = x0[2 * n : 3 * n]
-
-            bounds_lower = np.concatenate([
-                np.full(n, 0.0),     # Kp
-                np.full(n, 0.0),     # Kd
-                target_init * 0.8,   # target_length
-            ])
-
-            bounds_upper = np.concatenate([
-                np.full(n, 10.0),    # Kp
-                np.full(n, 2.0),     # Kd
-                target_init * 1.2,   # target_length
-            ])
-
-            return bounds_lower, bounds_upper
-
-        raise ValueError(
-            "Parameter dimension must be divisible by 4 or 3, "
-            f"got {param_dim}"
-        )
+        return bounds_lower, bounds_upper
 
     def _prepare_bounds(self, x0):
         """

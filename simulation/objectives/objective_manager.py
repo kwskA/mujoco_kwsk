@@ -56,7 +56,7 @@ class ObjectiveManager:
             walking_speed = details.get("walking_speed", 0.0)
 
             total_cost = (
-                max(simulation_time, walking_speed) * 1000.0
+                max(simulation_time, walking_speed) * 100.0
                 + walking_speed
             )
 

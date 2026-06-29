@@ -74,6 +74,9 @@ class SimulationRunner:
 
         mj_forward(self.model, data)
 
+        if hasattr(self.controller, "reset"):
+            self.controller.reset()
+
     def _get_phase_name(self, data):
         """
         現在の動作フェーズ名を取得する。

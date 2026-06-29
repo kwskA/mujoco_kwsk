@@ -46,3 +46,7 @@ class StandingController(BaseController):
         立位制御用の初期パラメータを作成する。
         """
         return self.control_method.make_initial_params(*args, **kwargs)
+
+    def reset(self):
+        if hasattr(self.control_method, "reset"):
+            self.control_method.reset()

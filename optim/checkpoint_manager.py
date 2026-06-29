@@ -280,12 +280,13 @@ class CheckpointManager:
         return qpos_names
 
     def _save_optimized_params(
-        self,
-        checkpoint_dir,
-        controller,
-    ):
+    self,
+    checkpoint_dir,
+    controller,
+):
         """
-        Controllerに展開済みの kp, kd, target_length をJSONとして保存する。
+        Controllerに展開済みの activation_ff, kp, kd, target_length を
+        JSONとして保存する。
         立位用の1次元配列と，歩行用の2次元配列の両方に対応。
         """
 
@@ -293,12 +294,21 @@ class CheckpointManager:
 
         control_method = getattr(controller, "control_method", controller)
 
+        activation_ff = getattr(
+            control_method,
+            "activation_ff",
+            None,
+        )
+
         kp = np.asarray(control_method.Kp, dtype=float)
         kd = np.asarray(control_method.Kd, dtype=float)
         target_length = np.asarray(
             control_method.target_length,
             dtype=float,
         )
+
+        if activation_ff is not None:
+            activation_ff = np.asarray(activation_ff, dtype=float)
 
         if names is None:
             if kp.ndim == 1:
@@ -320,6 +330,11 @@ class CheckpointManager:
         if kp.ndim == 1:
             for i, muscle_name in enumerate(names):
                 optimized_params[muscle_name] = {
+                    "activation_ff": (
+                        float(activation_ff[i])
+                        if activation_ff is not None
+                        else None
+                    ),
                     "kp": float(kp[i]),
                     "kd": float(kd[i]),
                     "target_length": float(target_length[i]),
@@ -343,6 +358,11 @@ class CheckpointManager:
 
                 for i, muscle_name in enumerate(names):
                     optimized_params[state_name][muscle_name] = {
+                        "activation_ff": (
+                            float(activation_ff[state_index, i])
+                            if activation_ff is not None
+                            else None
+                        ),
                         "kp": float(kp[state_index, i]),
                         "kd": float(kd[state_index, i]),
                         "target_length": float(
@@ -368,8 +388,8 @@ class CheckpointManager:
                 ensure_ascii=False,
             )
 
-        print(f"[CheckpointManager] wrote {path}")
-          
+        print(f"[CheckpointManager] wrote {path}")     
+        
     def _get_joint_qpos_dim(self, model, joint_id):
         """
         joint typeからqpos次元数を返す。
@@ -387,36 +407,3 @@ class CheckpointManager:
 
         # slide / hinge joint
         return 1
-
-    # def _save_initial_qpos(
-    #     self,
-    #     checkpoint_dir,
-    #     qpos_names,
-    #     initial_qpos,
-    # ):
-    #     """
-    #     checkpointで使用した初期姿勢qposをCSVとして保存する。
-    #     """
-
-    #     path = os.path.join(
-    #         checkpoint_dir,
-    #         "initial_qpos.csv",
-    #     )
-
-    #     with open(path, "w", newline="", encoding="utf-8") as f:
-    #         writer = csv.writer(f)
-
-    #         writer.writerow([
-    #             "index",
-    #             "name",
-    #             "value",
-    #         ])
-
-    #         for i, value in enumerate(initial_qpos):
-    #             writer.writerow([
-    #                 i,
-    #                 qpos_names[i],
-    #                 float(value),
-    #             ])
-
-    #     print(f"[CheckpointManager] wrote {path}")
